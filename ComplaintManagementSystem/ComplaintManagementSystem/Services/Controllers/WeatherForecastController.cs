@@ -37,9 +37,9 @@ namespace ComplaintManagementSystem.Controllers
         }
 
         [HttpGet("getAllOrgTypes", Name = "TestGetOrgTypes")]
-        public IEnumerable<BusinessTypeInfo> GetBusinessTypes()
+        public IEnumerable<BusinessTypesRecord> GetBusinessTypes()
         {
-            var table = new BusinessTypesTable();
+            var table = new BusinessTypes();
 
             return table.GetBusinessTypes();
         }
