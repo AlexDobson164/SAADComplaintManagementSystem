@@ -30,3 +30,4 @@ E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintM
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintManagementSystem\obj\Debug\net8.0\ComplaintManagementSystem.pdb
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintManagementSystem\obj\Debug\net8.0\ComplaintManagementSystem.genruntimeconfig.cache
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintManagementSystem\obj\Debug\net8.0\ref\ComplaintManagementSystem.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintManagementSystem\obj\Debug\net8.0\ComplaintManagementSystem.sourcelink.json
