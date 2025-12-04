@@ -1,3 +1,4 @@
+using FluentNHibernate.Conventions.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComplaintManagementSystem.Controllers
@@ -18,7 +19,7 @@ namespace ComplaintManagementSystem.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet("weather", Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -28,6 +29,19 @@ namespace ComplaintManagementSystem.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        [HttpGet("test", Name = "Test")]
+        public string Test()
+        {
+            return "test";
+        }
+
+        [HttpGet("getAllOrgTypes", Name = "TestGetOrgTypes")]
+        public IEnumerable<BusinessTypeInfo> GetBusinessTypes()
+        {
+            var table = new BusinessTypesTable();
+
+            return table.GetBusinessTypes();
         }
     }
 }

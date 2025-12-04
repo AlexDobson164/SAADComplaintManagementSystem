@@ -1,8 +1,48 @@
 [
   {
     "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
+    "Method": "GetBusinessTypes",
+    "RelativePath": "WeatherForecast/getAllOrgTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BusinessTypeInfo, ComplaintManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
+    "Method": "Test",
+    "RelativePath": "WeatherForecast/test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "WeatherForecast/weather",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

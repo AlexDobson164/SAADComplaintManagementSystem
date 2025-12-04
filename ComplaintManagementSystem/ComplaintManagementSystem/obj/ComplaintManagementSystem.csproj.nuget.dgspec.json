@@ -50,9 +50,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[4.4.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
