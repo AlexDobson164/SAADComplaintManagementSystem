@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplaintManagementSystem", "ComplaintManagementSystem.csproj", "{F347D25B-4FEE-66B1-96AB-AC26EAE9AC78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F347D25B-4FEE-66B1-96AB-AC26EAE9AC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F347D25B-4FEE-66B1-96AB-AC26EAE9AC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F347D25B-4FEE-66B1-96AB-AC26EAE9AC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F347D25B-4FEE-66B1-96AB-AC26EAE9AC78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A017594-10BC-4A99-9DDD-055C3BF04150}
+	EndGlobalSection
+EndGlobal
