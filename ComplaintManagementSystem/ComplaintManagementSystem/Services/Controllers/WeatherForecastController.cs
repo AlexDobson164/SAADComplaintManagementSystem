@@ -1,4 +1,3 @@
-using FluentNHibernate.Conventions.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComplaintManagementSystem.Controllers
@@ -30,18 +29,11 @@ namespace ComplaintManagementSystem.Controllers
             })
             .ToArray();
         }
-        [HttpGet("test", Name = "Test")]
-        public string Test()
-        {
-            return "test";
-        }
 
         [HttpGet("getAllOrgTypes", Name = "TestGetOrgTypes")]
-        public IEnumerable<BusinessTypesRecord> GetBusinessTypes()
+        public IEnumerable<BusinessRecord> GetBusinessTypes()
         {
-            var table = new BusinessTypes();
-
-            return table.GetBusinessTypes();
+            return BusinessTable.GetAllBusiness();
         }
     }
 }
