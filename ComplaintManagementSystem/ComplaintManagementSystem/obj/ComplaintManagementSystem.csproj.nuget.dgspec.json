@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[3.4.1, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authorization": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[4.4.0, )"
