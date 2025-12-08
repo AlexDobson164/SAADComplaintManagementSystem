@@ -7,11 +7,14 @@ public class AccountManagementController : ControllerBase
     AccountsHostedService AccountsHostedService = new AccountsHostedService();
     HashHostedService HashHostedService = new HashHostedService();
 
-    [HttpPost("AdminCreateAccount", Name = "AdminCreateAccount")]
+    [HttpPost("AdminCreateAccount", Name = "AdminCreateAccount"), BasicAuth]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<CreateAccountResponse> CreateAccount(AdminCreateAccountRequest request)
     {
+
+
         //auth checks here later
         var hashInfo = HashHostedService.HashPasswordAndGenerateSalt(new HashPasswordAndGenerateSaltRequest
         {

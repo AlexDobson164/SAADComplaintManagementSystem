@@ -41,10 +41,13 @@ public class AccountsHostedService
     public AuthInfoResponse GetAuthInfoByEmail(AuthInfoRequest request)
     { 
         var record = UserTable.GetPasswordAndSalt(request.Email);
+        if (record == null)
+            return new AuthInfoResponse();
+
         return new AuthInfoResponse
         {
-            HashedPassword = record.Password,
-            Salt = record.Salt
+            HashedPassword = record.Password ?? null,
+            Salt = record.Salt ?? null
         };
     }
 
