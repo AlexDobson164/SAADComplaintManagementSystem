@@ -1,6 +1,9 @@
-﻿namespace ComplaintManagementSystem.Services.BasicAuth
+﻿using Microsoft.AspNetCore.Authorization;
+
+public class BasicAuthAttribute :  AuthorizeAttribute
 {
-    public class BasicAuthAttribute
+    public BasicAuthAttribute()
     {
+        AuthenticationSchemes = "Basic";
     }
 }

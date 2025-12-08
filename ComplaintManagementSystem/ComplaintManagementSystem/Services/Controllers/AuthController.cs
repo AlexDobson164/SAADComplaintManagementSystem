@@ -6,7 +6,7 @@ public class AuthController : ControllerBase
 {
     [HttpPost("AuthToken", Name = "GetAuthToken"), BasicAuth]
     public IActionResult Token()
-    {
+    {        
         return Ok();
     }
 }

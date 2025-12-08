@@ -1,4 +1,7 @@
-﻿public static class UserTable
+﻿using Microsoft.AspNetCore.Identity;
+using NHibernate.Util;
+
+public static class UserTable
 {
     public static bool IsEmailInUse(string email)
     {
@@ -33,4 +36,42 @@
             session.Transaction.Commit();
         }
     }
+    public static PasswordAndSaltDto GetPasswordAndSalt(string email)
+    {
+       
+        using (var session = DatabaseConnection.GetSession())
+        {
+            return session.Query<UserRecord>()
+                .Where(x => x.email == email)
+                .Select(x => new PasswordAndSaltDto
+                {
+                    Password = x.password,
+                    Salt = x.salt
+                })
+                .SingleOrDefault();
+        };
+    }
+    public static User GetUserByEmail(string email)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            return session.Query<UserRecord>()
+                .Where(x => x.email == email)
+                .Select(x => new User
+                {
+                    Reference = x.reference,
+                    Email = x.email,
+                    BusinessReference = x.business_reference,
+                    FirstName = x.first_name,
+                    LastName = x.last_name,
+                    Role = x.role
+                })
+                .FirstOrDefault();
+        }
+    }
+}
+public class PasswordAndSaltDto
+{
+    public string Password { get; set; }
+    public string Salt { get; set; }
 }

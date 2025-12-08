@@ -36,23 +36,13 @@
   },
   {
     "ContainingType": "AuthController",
-    "Method": "GetAuth",
-    "RelativePath": "Auth/auth",
-    "HttpMethod": "GET",
+    "Method": "Token",
+    "RelativePath": "Auth/AuthToken",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Guid",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",

@@ -37,4 +37,28 @@ public class AccountsHostedService
             IsSuccessful = true,
         };
     }
+
+    public AuthInfoResponse GetAuthInfoByEmail(AuthInfoRequest request)
+    { 
+        var record = UserTable.GetPasswordAndSalt(request.Email);
+        return new AuthInfoResponse
+        {
+            HashedPassword = record.Password,
+            Salt = record.Salt
+        };
+    }
+
+    public GetUserByEmailResponse GetUserByEmail(GetUserByEmailRequest request)
+    {
+        var record = UserTable.GetUserByEmail(request.Email);
+        return new GetUserByEmailResponse
+        {
+            Reference = record.Reference,
+            Email = record.Email,
+            BusinessReference = record.BusinessReference,
+            FirstName = record.FirstName,
+            LastName = record.LastName,
+            Role = record.Role
+        };
+    }
 }
