@@ -1,0 +1,40 @@
+﻿// based this implementation off of the first example in this video - https://www.youtube.com/watch?v=GrJJXixjR8M
+public class ApiKeyAuthMiddleware
+{
+    private readonly RequestDelegate _next;
+    private BusinessHostedService _BusinessHostedService = new BusinessHostedService();
+    public ApiKeyAuthMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        if (!context.Request.Headers.TryGetValue("x-api-key", out var apiKey))
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("API Key Missing");
+            return;
+        }
+
+        if (!Guid.TryParse(apiKey, out var parsedApiKey))
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Invalid API Key");
+            return;
+        }
+
+        var response = _BusinessHostedService.ValidateApiKey(new ValidateApiKeyRequest
+        {
+            ApiKey = parsedApiKey
+        });
+        if (response.BusinessReference == Guid.Empty)
+        {
+            context.Response.StatusCode = 401;
+            await context.Response.WriteAsync("Invalid API Key");
+            return;
+        }
+
+        await _next(context);
+    }
+}

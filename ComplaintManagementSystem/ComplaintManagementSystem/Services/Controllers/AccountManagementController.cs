@@ -13,9 +13,11 @@ public class AccountManagementController : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<CreateAccountResponse> CreateAccount(AdminCreateAccountRequest request)
     {
+        var user = new AuthedUser(User);
 
+        if (user.Role != RolesEnum.SystemAdmin)
+            return Unauthorized();
 
-        //auth checks here later
         var hashInfo = HashHostedService.HashPasswordAndGenerateSalt(new HashPasswordAndGenerateSaltRequest
         {
             Password = request.password

@@ -57,7 +57,7 @@ public static class UserTable
         {
             return session.Query<UserRecord>()
                 .Where(x => x.email == email)
-                .Select(x => new AuthedUser
+                .Select(x => new User
                 {
                     Reference = x.reference,
                     Email = x.email,
