@@ -19,7 +19,6 @@ public static class UserTable
     public static void SaveNewUser(User user, string hashedPassword, string salt)
     {
         using (var session = DatabaseConnection.GetSession())
-        //using (var transaction = session.BeginTransaction())
         {
             session.BeginTransaction();
             session.Save(new UserRecord

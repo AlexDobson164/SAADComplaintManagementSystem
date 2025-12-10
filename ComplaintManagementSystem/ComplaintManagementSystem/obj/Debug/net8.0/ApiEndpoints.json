@@ -54,6 +54,41 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComplaintsController",
+    "Method": "RegisterComplaint",
+    "RelativePath": "Complaints/RegisterComplaint",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RegisterComplaintRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RegisterComplaintResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
     "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
     "Method": "GetBusinessTypes",
     "RelativePath": "WeatherForecast/getAllOrgTypes",

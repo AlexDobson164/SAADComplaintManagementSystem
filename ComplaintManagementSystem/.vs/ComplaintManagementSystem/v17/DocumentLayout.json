@@ -3,116 +3,52 @@
   "WorkspaceRootPath": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\apikey\\apikeyauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\apikey\\apikeyauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\complaints\\records\\complaintsrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\complaints\\records\\complaintsrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\businesstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\businesstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\types\\validateapikey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\types\\validateapikey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\types\\autheduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\types\\autheduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\accountshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\accountshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\businesshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\businesshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\accountmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\accountmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\types\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\types\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\complaintmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\types\\getuserbyemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\types\\getuserbyemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\types\\authinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\types\\authinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\complaints\\complaintstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\complaints\\complaintstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\records\\userrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\records\\userrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\usertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\security\\types\\hashpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\security\\types\\hashpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\complaints\\registercomplaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\complaints\\registercomplaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\security\\hashhostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\security\\hashhostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\common\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\common\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\security\\types\\hashpasswordandgeneratesalt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\security\\types\\hashpasswordandgeneratesalt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\accountmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\accountmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\types\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\types\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\apikey\\apikeyauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\apikey\\apikeyauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\authentication\\basicauth\\basicauthhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\organisation\\types\\admincreateaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\organisation\\types\\admincreateaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\email\\types\\sendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\email\\types\\sendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\records\\businesstypesrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\records\\businesstypesrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\database\\organisation\\records\\businessrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\database\\organisation\\records\\businessrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\types\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\types\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -122,17 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "AccountManagementController.cs",
               "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\AccountManagementController.cs",
               "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Controllers\\AccountManagementController.cs",
               "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\AccountManagementController.cs",
               "RelativeToolTip": "ComplaintManagementSystem\\Services\\Controllers\\AccountManagementController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAsAAAAQAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA0AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T13:41:26.94Z",
               "IsPinned": true,
@@ -140,355 +76,146 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthedUser.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Types\\AuthedUser.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Types\\AuthedUser.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Types\\AuthedUser.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Types\\AuthedUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T10:21:47.3Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "BasicAuthHandler.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAtwDIAAAAAAAAA",
+              "Title": "ComplaintsController.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAYwAgAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T20:54:38.28Z",
+              "WhenOpened": "2025-12-09T20:07:33.978Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApiKeyAuthMiddleware.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAswB4AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T12:07:59.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BusinessHostedService.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:12:07.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountsHostedService.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\AccountsHostedService.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\AccountsHostedService.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\AccountsHostedService.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\AccountsHostedService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAtwBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T14:25:15.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserTable.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAIA3wEAAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T15:22:56.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Program.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Program.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Program.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T11:42:00.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BusinessTable.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\BusinessTable.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\BusinessTable.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\BusinessTable.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\BusinessTable.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowB0AAAAbAAAA",
+              "Title": "UserTable.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\UserTable.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:39:08.109Z",
+              "WhenOpened": "2025-12-10T14:44:47.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ValidateApiKey.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\ValidateApiKey.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Types\\ValidateApiKey.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\ValidateApiKey.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Types\\ValidateApiKey.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ComplaintsTable.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Complaints\\ComplaintsTable.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Complaints\\ComplaintsTable.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Complaints\\ComplaintsTable.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Complaints\\ComplaintsTable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:17:41.094Z",
+              "WhenOpened": "2025-12-10T14:32:04.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
               "Title": "UserRecord.cs",
               "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\UserRecord.cs",
               "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\Records\\UserRecord.cs",
               "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\UserRecord.cs",
               "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\Records\\UserRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAXAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T17:21:13.734Z",
+              "WhenOpened": "2025-12-10T14:40:18.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ComplaintsRecord.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Complaints\\Records\\ComplaintsRecord.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Complaints\\Records\\ComplaintsRecord.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Complaints\\Records\\ComplaintsRecord.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Complaints\\Records\\ComplaintsRecord.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwA0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:30:53.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Validation.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Common\\Validation.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Common\\Validation.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Common\\Validation.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Common\\Validation.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAvwBAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:08:06.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterComplaint.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Complaints\\RegisterComplaint.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Complaints\\RegisterComplaint.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Complaints\\RegisterComplaint.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Complaints\\RegisterComplaint.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:55:08.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\User.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Types\\User.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\User.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Types\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAAAAAARAAAA",
+              "Title": "SendEmail.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Email\\Types\\SendEmail.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Email\\Types\\SendEmail.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Email\\Types\\SendEmail.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Email\\Types\\SendEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T15:50:32.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "HashPassword.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\Types\\HashPassword.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Security\\Types\\HashPassword.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\Types\\HashPassword.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Security\\Types\\HashPassword.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T22:27:14.051Z",
+              "WhenOpened": "2025-12-09T19:36:57.983Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Controllers\\AuthController.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA8AAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Program.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Program.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Program.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T21:31:07.049Z",
+              "WhenOpened": "2025-12-10T12:45:57.843Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ComplaintManagementSystem",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem.csproj",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\ComplaintManagementSystem.csproj",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem.csproj",
-              "RelativeToolTip": "ComplaintManagementSystem\\ComplaintManagementSystem.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-08T09:32:14.744Z",
+              "DocumentIndex": 9,
+              "Title": "BasicAuthHandler.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthHandler.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAtwD4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:42:19.965Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AuthInfo.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\AuthInfo.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Types\\AuthInfo.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\AuthInfo.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Types\\AuthInfo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAAAAAAcAAAA",
+              "DocumentIndex": 8,
+              "Title": "ApiKeyAuthMiddleware.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\ApiKey\\ApiKeyAuthMiddleware.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T22:34:59.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GetUserByEmail.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\GetUserByEmail.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Types\\GetUserByEmail.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\GetUserByEmail.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Types\\GetUserByEmail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAAAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T08:55:30.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BasicAuthAttribute.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthAttribute.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthAttribute.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthAttribute.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthAttribute.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T20:46:45.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "BasicAuthClient.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthClient.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthClient.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthClient.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Authentication\\BasicAuth\\BasicAuthClient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T20:52:27.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "HashHostedService.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\HashHostedService.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Security\\HashHostedService.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\HashHostedService.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Security\\HashHostedService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T17:23:40.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HashPasswordAndGenerateSalt.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\Types\\HashPasswordAndGenerateSalt.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Security\\Types\\HashPasswordAndGenerateSalt.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Security\\Types\\HashPasswordAndGenerateSalt.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Security\\Types\\HashPasswordAndGenerateSalt.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T16:10:41.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Validation.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Validation.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Validation.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Validation.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Validation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T14:39:55.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "BusinessRecord.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessRecord.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessRecord.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessRecord.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessRecord.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T17:22:14.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AdminCreateAccount.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Organisation\\Types\\AdminCreateAccount.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Organisation\\Types\\AdminCreateAccount.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Organisation\\Types\\AdminCreateAccount.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Organisation\\Types\\AdminCreateAccount.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:55:31.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CreateAccount.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\CreateAccount.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\Types\\CreateAccount.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\Types\\CreateAccount.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\Types\\CreateAccount.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T14:14:51.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "BusinessTypesRecord.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessTypesRecord.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessTypesRecord.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessTypesRecord.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Database\\Organisation\\Records\\BusinessTypesRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T17:43:56.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAYwCMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T16:57:07.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Types\\WeatherForecast.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Types\\WeatherForecast.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Types\\WeatherForecast.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Types\\WeatherForecast.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:44:36.743Z",
+              "WhenOpened": "2025-12-10T12:41:52.77Z",
               "EditorCaption": ""
             }
           ]
