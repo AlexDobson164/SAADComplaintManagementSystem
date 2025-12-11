@@ -2,7 +2,7 @@
 
 public static class NotesTable
 {
-    public static void SaveNewNote(CreateNoteData data)
+    public static async Task SaveNewNote(CreateNoteData data, CancellationToken cancellationToken)
     {
         Guid reference = Guid.NewGuid();
 
@@ -18,7 +18,7 @@ public static class NotesTable
                 user_reference = data.UserReference,
                 is_public = data.IsPublic
             });
-            session.Transaction.Commit();
+            await session.Transaction.CommitAsync(cancellationToken);
         }
     }
 }

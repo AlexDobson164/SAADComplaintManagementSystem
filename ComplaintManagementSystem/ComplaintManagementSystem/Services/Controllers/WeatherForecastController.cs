@@ -30,10 +30,10 @@ namespace ComplaintManagementSystem.Controllers
             .ToArray();
         }
 
-        [HttpGet("getAllOrgTypes", Name = "TestGetOrgTypes")]
-        public IEnumerable<BusinessRecord> GetBusinessTypes()
-        {
-            return BusinessTable.GetAllBusiness();
-        }
+        //[HttpGet("getAllOrgTypes", Name = "TestGetOrgTypes")]
+        //public IEnumerable<BusinessRecord> GetBusinessTypes()
+        //{
+        //    return BusinessTable.GetAllBusinessAsync();
+        //}
     }
 }

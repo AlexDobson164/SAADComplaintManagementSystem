@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Eventing.Reader;
 
-public class AddNewConsumerNoteRequest
+public class AddNewNoteConsumerNoteRequest
 {
     [Required]
     public Guid ComplaintReference { get; set; }
@@ -10,6 +10,6 @@ public class AddNewConsumerNoteRequest
 }
 public class AddNewNoteConsumerResponse
 {
-    public bool IsSuccess { get; set; }
+    public bool IsSuccessful { get; set; }
     public List<string> Errors { get; set; }
 }

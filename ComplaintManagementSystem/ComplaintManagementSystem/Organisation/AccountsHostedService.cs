@@ -2,16 +2,16 @@
 
 public class AccountsHostedService
 {
-    public CreateAccountResponse CreateAccount(CreateAccountRequest request)
+    public async Task<CreateAccountResponse> CreateAccount(CreateAccountRequest request, CancellationToken cancellationToken)
     {
         List<string> errorMessages = new List<string>();
         if (!Validation.ValidateEmail(request.Email))
             errorMessages.Add("Invalid Email");
         //make sure the email is not already used
-        if (UserTable.IsEmailInUse(request.Email))
+        if (UserTable.IsEmailInUse(request.Email, cancellationToken).Result)
             errorMessages.Add("Email is already in use");
         //make sure the business ref is valid
-        if (!BusinessTable.BusinessExistsByRef(request.BusinessReferece))
+        if (!BusinessTable.BusinessExistsByRef(request.BusinessReferece, cancellationToken).Result)
             errorMessages.Add("Business does not exist");
 
         if (errorMessages.Count != 0)
@@ -21,7 +21,7 @@ public class AccountsHostedService
                 ErrorMessages = errorMessages.ToArray()
             };
 
-        UserTable.SaveNewUser(new User
+        await UserTable.SaveNewUser(new User
         {
             Reference = Guid.NewGuid(),
             Email = request.Email,
@@ -30,7 +30,7 @@ public class AccountsHostedService
             LastName = request.LastName,
             Role = request.Role
         }, request.HashedPassword,
-        request.Salt);
+        request.Salt, cancellationToken);
 
         return new CreateAccountResponse
         {
@@ -38,22 +38,22 @@ public class AccountsHostedService
         };
     }
 
-    public AuthInfoResponse GetAuthInfoByEmail(AuthInfoRequest request)
+    public async Task<AuthInfoResponse> GetAuthInfoByEmail(AuthInfoRequest request, CancellationToken cancellationToken)
     { 
-        var record = UserTable.GetPasswordAndSalt(request.Email);
+        var record = UserTable.GetPasswordAndSalt(request.Email, cancellationToken).Result;
         if (record == null)
             return new AuthInfoResponse();
 
         return new AuthInfoResponse
         {
-            HashedPassword = record.Password ?? null,
-            Salt = record.Salt ?? null
+            HashedPassword = record.Password,
+            Salt = record.Salt
         };
     }
 
-    public GetUserByEmailResponse GetUserByEmail(GetUserByEmailRequest request)
+    public async Task<GetUserByEmailResponse> GetUserByEmail(GetUserByEmailRequest request, CancellationToken cancellationToken)
     {
-        var record = UserTable.GetUserByEmail(request.Email);
+        var record = await UserTable.GetUserByEmail(request.Email, cancellationToken);
         return new GetUserByEmailResponse
         {
             Reference = record.Reference,

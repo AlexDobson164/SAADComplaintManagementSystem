@@ -10,6 +10,7 @@ public class ApiKeyAuthMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
+        CancellationToken cancellationToken = context.RequestAborted;
         if (!context.Request.Headers.TryGetValue("x-api-key", out var apiKey))
         {
             context.Response.StatusCode = 401;
@@ -24,10 +25,10 @@ public class ApiKeyAuthMiddleware
             return;
         }
 
-        var response = _BusinessHostedService.ValidateApiKey(new ValidateApiKeyRequest
+        var response = await _BusinessHostedService.ValidateApiKey(new ValidateApiKeyRequest
         {
             ApiKey = parsedApiKey
-        });
+        }, cancellationToken);
         if (response.BusinessReference == Guid.Empty)
         {
             context.Response.StatusCode = 401;

@@ -1,9 +1,10 @@
 ﻿using NHibernate.Criterion;
+using NHibernate.Linq;
 using NHibernate.Param;
 
 public static class ComplaintsTable
 {
-    public static Guid SaveNewComplaintRecord(CreateComplaintData data)
+    public static async Task<Guid> SaveNewComplaintRecord(CreateComplaintData data, CancellationToken cancellationToken)
     {
         Guid reference = Guid.NewGuid();
 
@@ -21,25 +22,25 @@ public static class ComplaintsTable
                 is_open = true,
                 last_updated = DateTime.UtcNow
             });
-            session.Transaction.Commit();
+            await session.Transaction.CommitAsync(cancellationToken);
         }
         return reference;
     }
-    public static bool CheckIfComplaintExists(Guid complaintReference, Guid businessReference)
+    public static async Task<bool> CheckIfComplaintExists(Guid complaintReference, Guid businessReference, CancellationToken cancellationToken)
     {
         List<ComplaintsRecord> rows = new();
         using (var session = DatabaseConnection.GetSession())
         {
-            rows = session.Query<ComplaintsRecord>()
+            rows = await session.Query<ComplaintsRecord>()
                 .Where(x => x.reference == complaintReference && 
                        x.business_reference == businessReference)
-                .ToList();
+                .ToListAsync(cancellationToken);
         }
         if (rows.Count > 0)
             return true;
         return false;
     }
-    public static List<ComplaintInformation> SearchForComplaints(ComplaintsSearchRequest request)
+    public static async Task<List<ComplaintInformation>> SearchForComplaints(ComplaintsSearchRequest request, CancellationToken cancellationToken)
     {
         List<ComplaintInformation> complaints = new();
 
@@ -65,16 +66,17 @@ public static class ComplaintsTable
             if (request.IsOpen != null)
                 query.Where(x => x.is_open == request.IsOpen);
 
-            complaints = query.Where(x => x.business_reference == request.BusinessReference)
-                .List()
-                .Select(x => new ComplaintInformation
-                {
-                    Reference = x.reference,
-                    FirstMessage = x.first_message,
-                    TimeOpened = x.time_opened,
-                    LastUpdated = x.last_updated,
-                    IsOpen = x.is_open
-                }).ToList();           
+            var result = await query.Where(x => x.business_reference == request.BusinessReference)
+                .ListAsync(cancellationToken).ConfigureAwait(false);
+               
+            complaints = result.Select(x => new ComplaintInformation
+            {
+                Reference = x.reference,
+                FirstMessage = x.first_message,
+                TimeOpened = x.time_opened,
+                LastUpdated = x.last_updated,
+                IsOpen = x.is_open
+            }).ToList();
         }
         return complaints;
     }

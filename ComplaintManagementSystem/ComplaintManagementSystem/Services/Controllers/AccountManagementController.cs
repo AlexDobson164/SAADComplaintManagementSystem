@@ -8,21 +8,21 @@ public class AccountManagementController : ControllerBase
     HashHostedService HashHostedService = new HashHostedService();
 
     [HttpPost("AdminCreateAccount", Name = "AdminCreateAccount"), BasicAuth]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(CreateAccountResponse),StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    public ActionResult<CreateAccountResponse> CreateAccount(AdminCreateAccountRequest request)
+    public async Task<IResult> CreateAccount(AdminCreateAccountRequest request, CancellationToken cancellationToken)
     {
         var user = new AuthedUser(User);
 
         if (user.Role != RolesEnum.SystemAdmin)
-            return Unauthorized();
+            return Results.Unauthorized();
 
         var hashInfo = HashHostedService.HashPasswordAndGenerateSalt(new HashPasswordAndGenerateSaltRequest
         {
             Password = request.password
         });
-        var response = AccountsHostedService.CreateAccount(new CreateAccountRequest
+        var response = await AccountsHostedService.CreateAccount(new CreateAccountRequest
         {
             Email = request.emailAddress,
             HashedPassword = hashInfo.HashsedPassword,
@@ -31,11 +31,11 @@ public class AccountManagementController : ControllerBase
             FirstName = request.firstName,
             LastName = request.lastName,
             Role = request.role
-        });
+        }, cancellationToken);
         if (response.IsSuccessful)
         {
-            return Ok(response);
+            return Results.Ok(response);
         }
-        return BadRequest(response);
+        return Results.BadRequest(response);
     }
 }

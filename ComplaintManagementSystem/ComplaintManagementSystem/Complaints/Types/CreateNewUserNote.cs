@@ -8,6 +8,6 @@
 }
 public class CreateNewNoteUserResponse
 {
-    public bool IsSuccess { get; set; }
+    public bool IsSuccessful { get; set; }
     public List<string> Errors { get; set; } = new List<string>();
 }

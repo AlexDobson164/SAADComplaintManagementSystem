@@ -63,7 +63,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "AddNewConsumerNoteRequest",
+        "Type": "AddNewNoteConsumerNoteRequest",
         "IsRequired": true
       }
     ],
@@ -190,26 +190,6 @@
           "text/json"
         ],
         "StatusCode": 400
-      }
-    ]
-  },
-  {
-    "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
-    "Method": "GetBusinessTypes",
-    "RelativePath": "WeatherForecast/getAllOrgTypes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BusinessRecord, ComplaintManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
       }
     ]
   },

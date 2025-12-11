@@ -1,21 +1,24 @@
 ﻿public class BusinessHostedService
 {
-    public ValidateApiKeyResponse ValidateApiKey(ValidateApiKeyRequest request)
+    public async Task<ValidateApiKeyResponse> ValidateApiKey(ValidateApiKeyRequest request, CancellationToken cancellationToken)
     {
         return new ValidateApiKeyResponse
         {
-            BusinessReference = BusinessTable.GetBusinessRefByApiKey(request.ApiKey)
+            BusinessReference = await BusinessTable.GetBusinessRefByApiKey(request.ApiKey, cancellationToken).ConfigureAwait(false)
         };
     }
-    public GetBusinessReferenceFromHttpContextResponse GetBusinessReferenceFromHttpContext(GetBusinessReferenceFromHttpContextRequest request)
+    public async Task<GetBusinessReferenceFromHttpContextResponse> GetBusinessReferenceFromHttpContext(GetBusinessReferenceFromHttpContextRequest request, CancellationToken cancellationToken)
     {
         request.Context.Request.Headers.TryGetValue("x-api-key", out var apiKey);
+  
+        var businessReference = await ValidateApiKey(new ValidateApiKeyRequest
+        {
+            ApiKey = Guid.Parse(apiKey),
+        }, cancellationToken).ConfigureAwait(false);
+
         return new GetBusinessReferenceFromHttpContextResponse
         {
-            BusinessReference = ValidateApiKey(new ValidateApiKeyRequest
-            { 
-                ApiKey = Guid.Parse(apiKey) // this can not be null as it would not got through the middleware if there was no api key
-            }).BusinessReference
+            BusinessReference = businessReference.BusinessReference,
         };
     }
 }

@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using NHibernate.Linq;
 using NHibernate.Util;
 
 public static class UserTable
 {
-    public static bool IsEmailInUse(string email)
+    public static async Task<bool> IsEmailInUse(string email, CancellationToken cancellationToken)
     {
         List<UserRecord> rows = new();
         using (var session = DatabaseConnection.GetSession())
         {
-            rows = session.Query<UserRecord>()
+            rows = await session.Query<UserRecord>()
                 .Where(x => x.email == email)
-                .ToList();
+                .ToListAsync(cancellationToken);
         }
         if (rows.Count == 1)
             return true;
         return false;
     }
-    public static void SaveNewUser(User user, string hashedPassword, string salt)
+    public static async Task SaveNewUser(User user, string hashedPassword, string salt, CancellationToken cancellationToken)
     {
         using (var session = DatabaseConnection.GetSession())
         {
@@ -32,29 +33,29 @@ public static class UserTable
                 last_name = user.LastName,
                 role = user.Role
             });
-            session.Transaction.Commit();
+            await session.Transaction.CommitAsync(cancellationToken);
         }
     }
-    public static PasswordAndSaltDto GetPasswordAndSalt(string email)
+    public static async Task<PasswordAndSaltDto> GetPasswordAndSalt(string email, CancellationToken cancellationToken)
     {
        
         using (var session = DatabaseConnection.GetSession())
         {
-            return session.Query<UserRecord>()
+            return await session.Query<UserRecord>()
                 .Where(x => x.email == email)
                 .Select(x => new PasswordAndSaltDto
                 {
                     Password = x.password,
                     Salt = x.salt
                 })
-                .SingleOrDefault();
+                .FirstOrDefaultAsync(cancellationToken);
         };
     }
-    public static User GetUserByEmail(string email)
+    public static async Task<User> GetUserByEmail(string email, CancellationToken cancellationToken)
     {
         using (var session = DatabaseConnection.GetSession())
         {
-            return session.Query<UserRecord>()
+            return await session.Query<UserRecord>()
                 .Where(x => x.email == email)
                 .Select(x => new User
                 {
@@ -65,7 +66,7 @@ public static class UserTable
                     LastName = x.last_name,
                     Role = x.role
                 })
-                .FirstOrDefault();
+                .FirstOrDefaultAsync(cancellationToken);
         }
     }
 }

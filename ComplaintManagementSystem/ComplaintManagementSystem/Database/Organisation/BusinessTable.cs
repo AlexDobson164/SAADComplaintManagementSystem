@@ -1,34 +1,36 @@
-﻿public static class BusinessTable
+﻿using NHibernate.Linq;
+
+public static class BusinessTable
 {
-    public static BusinessRecord[] GetAllBusiness()
+    public static async Task<List<BusinessRecord>> GetAllBusinessAsync(CancellationToken cancellationToken)
     {
         using (var session = DatabaseConnection.GetSession())
         {
-            return session.Query<BusinessRecord>().ToArray();
+            return await session.Query<BusinessRecord>().ToListAsync(cancellationToken);
         }
     }
-    public static bool BusinessExistsByRef(Guid reference)
+    public static async Task<bool> BusinessExistsByRef(Guid reference, CancellationToken cancellationToken)
     {
         int rowCount;
         using (var session = DatabaseConnection.GetSession())
         {
-            rowCount = session.Query<BusinessRecord>()
+            rowCount = await session.Query<BusinessRecord>()
                 .Where(x => x.reference == reference)
-                .Count();
+                .CountAsync(cancellationToken);
         }
         if (rowCount == 1)
             return true;
         return false;
     }
 
-    public static Guid GetBusinessRefByApiKey(Guid apiKey)
+    public static async Task<Guid> GetBusinessRefByApiKey(Guid apiKey, CancellationToken cancellationToken)
     {
         BusinessRecord record;
         using (var session = DatabaseConnection.GetSession())
         {
-            record = session.Query<BusinessRecord>()
+            record = await session.Query<BusinessRecord>()
                 .Where(x => x.api_key == apiKey)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync(cancellationToken);
         }
         if (record == null)
             return Guid.Empty;

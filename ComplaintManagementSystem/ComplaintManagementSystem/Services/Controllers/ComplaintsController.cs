@@ -11,25 +11,25 @@ public class ComplaintsController : ControllerBase
     BusinessHostedService BusinessHostedService = new BusinessHostedService();
 
     [HttpPost("RegisterComplaint", Name = "RegisterComplaint")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(RegisterComplaintResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<RegisterComplaintResponse> RegisterComplaint(RegisterComplaintRequest request)
+    public async Task<IResult> RegisterComplaint(RegisterComplaintRequest request, CancellationToken cancellationToken)
     {
-        Guid businessReference = BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
+        var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
         {
             Context = HttpContext
-        }).BusinessReference;
+        }, cancellationToken);
 
-        var response = ComplaintsHostedService.CreateComplaint(new CreateComplaintRequest
+        var response = await ComplaintsHostedService.CreateComplaint(new CreateComplaintRequest
         {
             ConsumerEmail = request.ConsumerEmail.ToLower(),
             ConsumerPostcode = request.ConsumerPostCode.ToUpper(),
             FirstMessage = request.NoteText,
-            BusinessReference = businessReference
-        });
-
+            BusinessReference = businessReference.BusinessReference
+        },cancellationToken).ConfigureAwait(false);
+         
         if (!response.IsSuccessful)
-            return BadRequest(new RegisterComplaintResponse
+            return Results.BadRequest(new RegisterComplaintResponse
             {
                 IsSuccessful = false,
                 Errors = response.Errors
@@ -50,7 +50,8 @@ public class ComplaintsController : ControllerBase
             Complaint Management System
             """
         });
-        return Ok(new RegisterComplaintResponse
+
+        return Results.Ok(new RegisterComplaintResponse
         {
             ComplaintReference = response.ComplaintReference,
             IsSuccessful = response.IsSuccessful,
@@ -60,87 +61,87 @@ public class ComplaintsController : ControllerBase
     // for these 2 methods, check if the complaint has the correct business ref
     // needs testing
     [HttpPost("AddNoteConsumer", Name = "AddNoteConsumer")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AddNewNoteConsumerResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<AddNewNoteConsumerResponse> AddNewConsumerNote(AddNewConsumerNoteRequest request)
+    public async Task<IResult> AddNewConsumerNote(AddNewNoteConsumerNoteRequest request, CancellationToken cancellationToken)
     {
-        Guid businessReference = BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
+        var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
         {
             Context = HttpContext
-        }).BusinessReference;
+        }, cancellationToken);
 
-        var response = ComplaintsHostedService.AddConsumerNoteToComplaint(new CreateNewNoteConsumerRequest
+        var response = await ComplaintsHostedService.AddConsumerNoteToComplaint(new CreateNewNoteConsumerRequest
         {
             ComplaintReference = request.ComplaintReference,
-            BusinessReference = businessReference,
+            BusinessReference = businessReference.BusinessReference,
             NoteText = request.NoteText
-        });
+        }, cancellationToken).ConfigureAwait(false);
 
         if (!response.IsSuccess)
-            return BadRequest(new AddNewNoteConsumerResponse
+            return Results.BadRequest(new AddNewNoteConsumerResponse
             {
-                IsSuccess = false,
+                IsSuccessful = false,
                 Errors = response.Errors
             });
 
-        return Ok(new AddNewNoteConsumerResponse
+            return Results.Ok(new AddNewNoteConsumerResponse
         {
-            IsSuccess = true,
+            IsSuccessful = true,
         });
     }
     // add new note account holder - needs testing
     [HttpPost("AddNoteUser", Name = "AddNoteUser"), BasicAuth]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AddNewNoteUserResponse),StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<AddNewNoteUserResponse> AddNewUserNote(AddNewNoteUserRequest request)
+    public async Task<IResult> AddNewUserNote(AddNewNoteUserRequest request, CancellationToken cancellationToken)
     {
         var user = new AuthedUser(User);
 
         if (user.Role != RolesEnum.Consumer)
-            return Unauthorized("User is not authorized to add a note using this endpoint");
+            return Results.Unauthorized();
 
-        var response = ComplaintsHostedService.AddUserNoteToComplaint(new CreateNewNoteUserRequest
+        var response = await ComplaintsHostedService.AddUserNoteToComplaint(new CreateNewNoteUserRequest
         {
             ComplaintReference = request.ComplaintReference,
             BusinessReference = user.BusinessReference,
             UserReference = user.Reference,
             NoteText = request.NoteText
-        });
+        }, cancellationToken).ConfigureAwait(false);
 
-        if (!response.IsSuccess)
-            return BadRequest(new AddNewNoteConsumerResponse
+        if (!response.IsSuccessful)
+            return Results.BadRequest(new AddNewNoteConsumerResponse
             {
-                IsSuccess = false,
+                IsSuccessful = false,
                 Errors = response.Errors
             });
 
-        return Ok(new AddNewNoteUserResponse
+        return Results.Ok(new AddNewNoteUserResponse
         {
-            IsSuccess = true,
+            IsSuccessful = true,
         });
     }
     // search complaints
     [HttpPost("SearchForComplaint", Name = "SearchForComplaint")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(SearchForComplaintResponse),StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<SearchForComplaintResponse> SearchForComplaint(SearchForComplaintRequest request)
+    public async Task<IResult> SearchForComplaint(SearchForComplaintRequest request, CancellationToken cancellationToken)
     {
-        Guid businessReference = BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
+        var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
         {
             Context = HttpContext
-        }).BusinessReference;
+        },cancellationToken).ConfigureAwait(false);
 
-        var response = ComplaintsHostedService.SearchComplaints(new ComplaintsSearchRequest
+        var response = await ComplaintsHostedService.SearchComplaints(new ComplaintsSearchRequest
         {
             FirstNote = request.FirstNote,
             ConsumerEmail = request.ConsumerEmail,
             ConsumerPostCode = request.ConsumerPostCode,
             ComplaintReference = request.ComplaintReference,
             IsOpen = request.Is_Open,
-            BusinessReference = businessReference
-        });
+            BusinessReference = businessReference.BusinessReference
+        }, cancellationToken).ConfigureAwait(false);
 
-        return new SearchForComplaintResponse
+        return Results.Ok(new SearchForComplaintResponse
         {
             Complaints = response.Complaints.ConvertAll(x => new Complaint
             {
@@ -151,7 +152,7 @@ public class ComplaintsController : ControllerBase
                 IsOpen = x.IsOpen
             }),
             IsSuccess = true
-        };
+        });
     }
     // close complaint consumer
     // close complaint account holder
