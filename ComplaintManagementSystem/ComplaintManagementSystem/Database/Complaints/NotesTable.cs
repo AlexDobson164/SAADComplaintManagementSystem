@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.Xml;
+﻿using NHibernate;
+using System.Security.Cryptography.Xml;
 
 public static class NotesTable
 {
@@ -18,7 +19,7 @@ public static class NotesTable
                 user_reference = data.UserReference,
                 is_public = data.IsPublic
             });
-            await session.Transaction.CommitAsync(cancellationToken);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate.Linq.Expressions;
+using System.Reflection.Metadata.Ecma335;
 
 [ApiController]
 [Route("[controller]")]
@@ -58,8 +59,7 @@ public class ComplaintsController : ControllerBase
             Errors = response.Errors
         });
     }
-    // for these 2 methods, check if the complaint has the correct business ref
-    // needs testing
+    
     [HttpPost("AddNoteConsumer", Name = "AddNoteConsumer")]
     [ProducesResponseType(typeof(AddNewNoteConsumerResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -89,7 +89,7 @@ public class ComplaintsController : ControllerBase
             IsSuccessful = true,
         });
     }
-    // add new note account holder - needs testing
+    
     [HttpPost("AddNoteUser", Name = "AddNoteUser"), BasicAuth]
     [ProducesResponseType(typeof(AddNewNoteUserResponse),StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -97,7 +97,7 @@ public class ComplaintsController : ControllerBase
     {
         var user = new AuthedUser(User);
 
-        if (user.Role != RolesEnum.Consumer)
+        if (user.Role == RolesEnum.Consumer)
             return Results.Unauthorized();
 
         var response = await ComplaintsHostedService.AddUserNoteToComplaint(new CreateNewNoteUserRequest
@@ -120,10 +120,9 @@ public class ComplaintsController : ControllerBase
             IsSuccessful = true,
         });
     }
-    // search complaints
+    
     [HttpPost("SearchForComplaint", Name = "SearchForComplaint")]
     [ProducesResponseType(typeof(SearchForComplaintResponse),StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IResult> SearchForComplaint(SearchForComplaintRequest request, CancellationToken cancellationToken)
     {
         var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
@@ -154,8 +153,128 @@ public class ComplaintsController : ControllerBase
             IsSuccess = true
         });
     }
+
     // close complaint consumer
+    [HttpPost("CloseComplaintConsumer", Name = "CloseComplaintConsumer")]
+    [ProducesResponseType(typeof(CloseComplaintConsumerResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IResult> CloseComplaintConsumer(CloseComplaintConsumerRequest request, CancellationToken cancellationToken)
+    {
+        var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
+        {
+            Context = HttpContext
+        }, cancellationToken);
+
+        var response = await ComplaintsHostedService.ConsumerCloseComplaint(new ConsumerCloseComplaintRequest
+        {
+           ComplaintReference = request.ComplaintReference,
+           BusinessReference = businessReference.BusinessReference,
+           ConsumerEmail = request.ConsumerEmail,
+           ConsumerPostcode = request.ConsumerPostcode,
+           Feedback = request.Feedback,
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+        {
+            if (response.ErrorCode == StatusCodes.Status404NotFound)
+                return Results.NotFound(new CloseComplaintConsumerResponse
+                {
+                    IsSuccessful = false,
+                    Errors = new List<string> { response.ErrorMessage }
+                });
+            return Results.Unauthorized();
+        }
+
+        EmailHostedService.SendComplaintClosedEmail(new SendComplaintClosedEmailRequest
+        {
+            ReceivingEmail = request.ConsumerEmail,
+            SendingEmail = "Complaints@ComplaintsManagementSystem.com",
+            EmailText = $"""
+            Hi,
+            We are contacting you to let you know that your complaint has been closed
+            If this wasn't done by you, please contact us immediately and give us the information below so that we can get this resolved:
+                - your email
+                - your postcode
+
+            This information will help us find your complaint.
+
+            Thank you
+            Complaint Management System
+            """
+        });
+
+        return Results.Ok(new CloseComplaintConsumerResponse
+        {
+            IsSuccessful = true
+        });
+    }
+
     // close complaint account holder
+    [HttpPost("CloseComplaintUser", Name = "CloseComplaintUser"), BasicAuth]
+    [ProducesResponseType(typeof(CloseComplaintUserResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IResult> CloseComplaintUser(CloseComplaintUserRequest request, CancellationToken cancellationToken)
+    {
+
+        var user = new AuthedUser(User);
+
+        if (user.Role == RolesEnum.Consumer)
+            return Results.Unauthorized();
+
+        var response = await ComplaintsHostedService.UserCloseComplaint(new UserCloseComplaintRequest
+        {
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = user.BusinessReference,
+            ConsumerEmail = request.ConsumerEmail,
+            ConsumerPostcode = request.ConsumerPostcode,
+            UserReference = user.Reference,
+            Feedback = request.Feedback,
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+        {
+            if (response.ErrorCode == StatusCodes.Status404NotFound)
+                return Results.NotFound(new CloseComplaintUserResponse
+                {
+                    IsSuccessful = false,
+                    Errors = new List<string> { response.ErrorMessage }
+                });
+            if (response.ErrorCode != StatusCodes.Status400BadRequest)
+                return Results.BadRequest(new CloseComplaintUserResponse
+                {
+                    IsSuccessful = false,
+                    Errors = new List<string> { response.ErrorMessage }
+                });
+        }
+
+        EmailHostedService.SendComplaintClosedEmail(new SendComplaintClosedEmailRequest
+        {
+            ReceivingEmail = response.ConsumerEmail,
+            SendingEmail = "Complaints@ComplaintsManagementSystem.com",
+            EmailText = $"""
+            Hi,
+            We are contacting you to let you know that your complaint has been closed by a Help Desk Agent.
+            If you feel that your complaint was not appropriately responded to,
+            please contact us immediately and give us the information below so that we can get this resolved and re open the complaint:
+                - your email
+                - your postcode
+           
+            This information will help us find your complaint.
+
+            Thank you
+            Complaint Management System
+            """
+        });
+
+        return Results.Ok(new CloseComplaintUserResponse
+        {
+            IsSuccessful = true
+        });
+    }
+
     // view complaint consumer
     // view complaint account holder
 }

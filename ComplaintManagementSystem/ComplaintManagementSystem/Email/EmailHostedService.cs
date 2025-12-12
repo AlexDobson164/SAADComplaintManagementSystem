@@ -21,4 +21,21 @@ public class EmailHostedService
         smtp.Disconnect(true);
         return new SendComplaintEmailResponse();
     }
+
+    public SendComplaintClosedEmailResponse SendComplaintClosedEmail(SendComplaintClosedEmailRequest request)
+    {
+        var email = new MimeMessage();
+        email.From.Add(new MailboxAddress("Complaint Management System", request.SendingEmail));
+        email.To.Add(new MailboxAddress("Consumer", request.ReceivingEmail));
+        email.Subject = "Your Complaint has been closed!";
+        email.Body = new TextPart(TextFormat.Plain)
+        {
+            Text = request.EmailText
+        };
+        using var smtp = new SmtpClient();
+        smtp.Connect("localhost", 1025);
+        smtp.Send(email);
+        smtp.Disconnect(true);
+        return new SendComplaintClosedEmailResponse();
+    }
 }

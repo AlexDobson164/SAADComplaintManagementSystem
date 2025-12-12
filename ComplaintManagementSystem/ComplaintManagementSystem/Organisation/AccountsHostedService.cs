@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-public class AccountsHostedService
+﻿public class AccountsHostedService
 {
     public async Task<CreateAccountResponse> CreateAccount(CreateAccountRequest request, CancellationToken cancellationToken)
     {
@@ -40,7 +38,7 @@ public class AccountsHostedService
 
     public async Task<AuthInfoResponse> GetAuthInfoByEmail(AuthInfoRequest request, CancellationToken cancellationToken)
     { 
-        var record = UserTable.GetPasswordAndSalt(request.Email, cancellationToken).Result;
+        var record = await UserTable.GetPasswordAndSalt(request.Email, cancellationToken);
         if (record == null)
             return new AuthInfoResponse();
 

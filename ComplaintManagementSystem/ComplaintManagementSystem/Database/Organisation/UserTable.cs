@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using NHibernate;
 using NHibernate.Linq;
 using NHibernate.Util;
 
@@ -33,7 +34,7 @@ public static class UserTable
                 last_name = user.LastName,
                 role = user.Role
             });
-            await session.Transaction.CommitAsync(cancellationToken);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
         }
     }
     public static async Task<PasswordAndSaltDto> GetPasswordAndSalt(string email, CancellationToken cancellationToken)

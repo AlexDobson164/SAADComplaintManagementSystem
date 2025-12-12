@@ -1,4 +1,5 @@
 using FluentNHibernate.Conventions.Helpers;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 public class ComplaintsHostedService
 {
@@ -69,6 +70,8 @@ public class ComplaintsHostedService
             IsPublic = true
         }, cancellationToken);
 
+        await ComplaintsTable.LastUpdated(request.ComplaintReference, request.BusinessReference, cancellationToken);
+
         return new CreateNewNoteConsumerResponse
         {
             IsSuccess = true,
@@ -91,6 +94,8 @@ public class ComplaintsHostedService
             IsPublic = request.IsPublic
         }, cancellationToken);
 
+        await ComplaintsTable.LastUpdated(request.ComplaintReference, request.BusinessReference, cancellationToken);
+
         return new CreateNewNoteUserResponse
         {
             IsSuccessful = true
@@ -112,6 +117,123 @@ public class ComplaintsHostedService
         {
             Complaints = response,
             IsSuccess = true
+        };
+    }
+
+    public async Task<ConsumerCloseComplaintResponse> ConsumerCloseComplaint(ConsumerCloseComplaintRequest request, CancellationToken cancellationToken)
+    {
+        if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
+            return new ConsumerCloseComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status404NotFound,
+                ErrorMessage = "Complaint does not exist"
+            };
+
+        if (!await ComplaintsTable.CloseComplaint(new CloseComplaint
+        {
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = request.BusinessReference,
+            ConsumerEmail = request.ConsumerEmail,
+            ConsumerPostcode = request.ConsumerPostcode,
+            UserReference = Guid.Parse("87de9d86-4079-4b0a-8368-fd037f0fc38f"), // the account reference for the "consumer" in the db
+            CloseReason = "Closed By Consumer"
+
+        }, cancellationToken))
+            return new ConsumerCloseComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status401Unauthorized,
+                ErrorMessage = "Provided details do not match the details provided when opening the complaint"
+            };
+
+        await ComplaintsTable.LastUpdated(request.ComplaintReference, request.BusinessReference, cancellationToken);
+
+        if (!String.IsNullOrEmpty(request.Feedback))
+            await AddUserNoteToComplaint(new CreateNewNoteUserRequest
+            {
+                ComplaintReference = request.ComplaintReference,
+                BusinessReference = request.BusinessReference,
+                UserReference = Guid.Parse("87de9d86-4079-4b0a-8368-fd037f0fc38f"), // the account reference for the "consumer" in the db
+                NoteText = request.Feedback,
+                IsPublic = false,
+            }, cancellationToken);
+        return new ConsumerCloseComplaintResponse
+        {
+            IsSuccessful = true,
+        };
+    }
+    public async Task<UserCloseComplaintResponse> UserCloseComplaint(UserCloseComplaintRequest request, CancellationToken cancellationToken)
+    {
+        //nneed to make a new save function that doesnt take consumer info
+        if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
+            return new UserCloseComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status404NotFound,
+                ErrorMessage = "Complaint does not exist"
+            };
+
+        var lastUpdated = await ComplaintsTable.CheckWhenLastUpdated(request.ComplaintReference, request.BusinessReference, cancellationToken);
+        var difference = DateTime.UtcNow - lastUpdated;
+
+        if (!String.IsNullOrEmpty(request.Reason))
+        {
+            var response = await ComplaintsTable.CloseComplaint(new CloseComplaint
+            {
+                ComplaintReference = request.ComplaintReference,
+                BusinessReference = request.BusinessReference,
+                ConsumerEmail = request.ConsumerEmail,
+                ConsumerPostcode = request.ConsumerPostcode,
+                UserReference = request.UserReference,
+                CloseReason = request.Reason
+
+            }, cancellationToken);
+
+            if (response == false)
+                return new UserCloseComplaintResponse
+                {
+                    IsSuccessful = false,
+                    ErrorCode = StatusCodes.Status400BadRequest,
+                    ErrorMessage = "Provided details do not match the details provided when opening the complaint"
+                };
+
+            if (!String.IsNullOrEmpty(request.Feedback))
+                await AddUserNoteToComplaint(new CreateNewNoteUserRequest
+                {
+                    ComplaintReference = request.ComplaintReference,
+                    BusinessReference = request.BusinessReference,
+                    UserReference = Guid.Parse("87de9d86-4079-4b0a-8368-fd037f0fc38f"), // the account reference for the "consumer" in the db
+                    NoteText = request.Feedback,
+                    IsPublic = false,
+                }, cancellationToken);
+
+            return new UserCloseComplaintResponse
+            {
+                IsSuccessful = true,
+                ConsumerEmail = request.ConsumerEmail
+            };
+        }
+        if (difference.TotalDays >= 14)
+        {
+            var response = await ComplaintsTable.CloseComplaintWithoutConsumerInfo(new CloseComplaintWithoutConsumerInfoRequest
+            {
+                ComplaintReference = request.ComplaintReference,
+                BusinessReference = request.BusinessReference,
+                UserReference = request.UserReference,
+                CloseReason = "Closed by Help Desk Agent after 14 days of inactivity on the complaint"
+            }, cancellationToken);
+            return new UserCloseComplaintResponse
+            {
+                IsSuccessful = true,
+                ConsumerEmail = response.ConsumerEmail
+            };
+        }
+        return new UserCloseComplaintResponse
+        {
+            IsSuccessful = false,
+            ErrorCode = StatusCodes.Status400BadRequest,
+            ErrorMessage = "Did not provide a reason or days since last update has not reached 14 yet"
         };
     }
 }

@@ -1,6 +1,6 @@
-﻿using NHibernate.Criterion;
+﻿using NHibernate;
+using NHibernate.Criterion;
 using NHibernate.Linq;
-using NHibernate.Param;
 
 public static class ComplaintsTable
 {
@@ -22,7 +22,7 @@ public static class ComplaintsTable
                 is_open = true,
                 last_updated = DateTime.UtcNow
             });
-            await session.Transaction.CommitAsync(cancellationToken);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
         }
         return reference;
     }
@@ -79,5 +79,90 @@ public static class ComplaintsTable
             }).ToList();
         }
         return complaints;
+    }
+    public static async Task LastUpdated(Guid complaintReference, Guid BusinessReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference == complaintReference)
+                .Where(x => x.business_reference == BusinessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+            
+            record.last_updated = DateTime.UtcNow;
+
+            session.BeginTransaction();
+            await session.UpdateAsync(record);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
+        }
+    }
+
+    public static async Task<bool> CloseComplaint(CloseComplaint request, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference == request.ComplaintReference)
+                .Where(x => x.business_reference == request.BusinessReference)
+                .Where(x => x.consumer_email == request.ConsumerEmail)
+                .Where(x => x.consumer_post_code == request.ConsumerPostcode)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (record == null)
+                return false;
+
+            record.last_updated = DateTime.UtcNow;
+            record.closed_by = request.UserReference;
+            record.is_open = false;
+            record.closed_reason = request.CloseReason;
+
+            session.BeginTransaction();
+            await session.UpdateAsync(record);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
+        }
+        return true;
+    }
+    public static async Task<DateTime> CheckWhenLastUpdated(Guid complaintReference, Guid businessReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference ==  complaintReference)
+                .Where(x => x.business_reference == businessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+            return record.last_updated;
+        }
+    }
+    public static async Task<CloseComplaintWithoutConsumerInfoResponse> CloseComplaintWithoutConsumerInfo(CloseComplaintWithoutConsumerInfoRequest request, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference == request.ComplaintReference)
+                .Where(x => x.business_reference == request.BusinessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (record == null)
+                return new CloseComplaintWithoutConsumerInfoResponse
+                {
+                    IsSuccessful = false,
+                    ConsumerEmail = record.consumer_email
+                };
+
+            record.last_updated = DateTime.UtcNow;
+            record.closed_by = request.UserReference;
+            record.is_open = false;
+            record.closed_reason = request.CloseReason;
+
+            session.BeginTransaction();
+            await session.UpdateAsync(record);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
+
+            return new CloseComplaintWithoutConsumerInfoResponse
+            {
+                IsSuccessful = true,
+                ConsumerEmail = record.consumer_email
+            };
+        }
     }
 }
