@@ -62,4 +62,19 @@
             Role = record.Role
         };
     }
+    public async Task<GetNameByUserReferenceResponse> GetNameByUserRef(GetNameByUserReferenceRequest request, CancellationToken cancellationToken)
+    {
+        var response = await UserTable.GetNameByReference(request.UserReference, cancellationToken);
+        if (String.IsNullOrEmpty(response))
+            return new GetNameByUserReferenceResponse
+            {
+                IsSuccessful = false,
+                Error = "User not found"
+            };
+        return new GetNameByUserReferenceResponse
+        {
+            Name = response,
+            IsSuccessful = true
+        };
+    }
 }

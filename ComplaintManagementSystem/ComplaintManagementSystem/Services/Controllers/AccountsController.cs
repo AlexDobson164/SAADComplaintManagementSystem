@@ -2,7 +2,7 @@
 
 [ApiController]
 [Route("[controller]")]
-public class AccountManagementController : ControllerBase
+public class AccountsController : ControllerBase
 {
     AccountsHostedService AccountsHostedService = new AccountsHostedService();
     HashHostedService HashHostedService = new HashHostedService();

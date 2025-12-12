@@ -2,6 +2,7 @@
 using NHibernate;
 using NHibernate.Linq;
 using NHibernate.Util;
+using Org.BouncyCastle.Asn1.Mozilla;
 
 public static class UserTable
 {
@@ -68,6 +69,16 @@ public static class UserTable
                     Role = x.role
                 })
                 .FirstOrDefaultAsync(cancellationToken);
+        }
+    }
+    public static async Task<string> GetNameByReference(Guid userReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<UserRecord>()
+                .Where(x => x.reference == userReference)
+                .FirstOrDefaultAsync(cancellationToken);
+            return $"{record.first_name} {record.last_name}";
         }
     }
 }

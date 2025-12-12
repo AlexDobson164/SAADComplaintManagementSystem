@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "AccountManagementController",
+    "ContainingType": "AccountsController",
     "Method": "CreateAccount",
-    "RelativePath": "AccountManagement/AdminCreateAccount",
+    "RelativePath": "Accounts/AdminCreateAccount",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -278,6 +278,76 @@
           "text/json"
         ],
         "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintsController",
+    "Method": "ViewComplaintConsumer",
+    "RelativePath": "Complaints/ViewComplaintConsumer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ViewComplaintConsumerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewComplaintConsumerResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintsController",
+    "Method": "ViewComplaintUser",
+    "RelativePath": "Complaints/ViewComplaintUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ViewComplaintUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ViewComplaintUserResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
       }
     ]
   },

@@ -236,4 +236,25 @@ public class ComplaintsHostedService
             ErrorMessage = "Did not provide a reason or days since last update has not reached 14 yet"
         };
     }
+    public async Task<ViewComplaintResponse> ViewComplaint(ViewComplaintRequest request, CancellationToken cancellationToken)
+    {
+        if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
+            return new ViewComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status404NotFound,
+                ErrorMessage = "Complaint does not exist"
+            };
+
+        var isOpen = ComplaintsTable.IsComplaintOpen(request.ComplaintReference, request.BusinessReference, cancellationToken);
+
+        var notes = NotesTable.GetAllNotesForComplaint(request.ComplaintReference, request.GetPrivate, cancellationToken);
+
+        return new ViewComplaintResponse
+        {
+            Notes = notes.Result,
+            IsOpen = isOpen.Result,
+            IsSuccessful = true
+        };
+    }
 }

@@ -7,6 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 [Route("[controller]")]
 public class ComplaintsController : ControllerBase
 {
+    AccountsHostedService AccountsHostedService = new AccountsHostedService();
     ComplaintsHostedService ComplaintsHostedService = new ComplaintsHostedService();
     EmailHostedService EmailHostedService = new EmailHostedService();
     BusinessHostedService BusinessHostedService = new BusinessHostedService();
@@ -276,5 +277,86 @@ public class ComplaintsController : ControllerBase
     }
 
     // view complaint consumer
+    [HttpPost("ViewComplaintConsumer", Name = "ViewComplaintConsumer")]
+    [ProducesResponseType(typeof(ViewComplaintConsumerResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IResult> ViewComplaintConsumer(ViewComplaintConsumerRequest request, CancellationToken cancellationToken)
+    {
+        var businessReference = await BusinessHostedService.GetBusinessReferenceFromHttpContext(new GetBusinessReferenceFromHttpContextRequest
+        {
+            Context = HttpContext
+        }, cancellationToken);
+
+        var response = await ComplaintsHostedService.ViewComplaint(new ViewComplaintRequest
+        {
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = businessReference.BusinessReference,
+            GetPrivate = false
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+            return Results.NotFound(new ViewComplaintConsumerResponse
+            {
+                IsSucessful = false,
+                Errors = new List<string>() { "Complaint could not be found"}
+            });
+        return Results.Ok(new ViewComplaintConsumerResponse
+        {
+            IsSucessful = true,
+            IsOpen = response.IsOpen,
+            Notes = response.Notes.ConvertAll(x => new ComplaintNoteForConsumer
+            {
+                NoteText = x.NoteText,
+                SenderName = AccountsHostedService.GetNameByUserRef(new GetNameByUserReferenceRequest
+                {
+                    UserReference = x.UserReference
+                }, cancellationToken).Result.Name,
+                SenderReference = x.UserReference,
+                TimeNoteSent = x.TimePosted
+            })
+        });
+    }
+
     // view complaint account holder
+    [HttpPost("ViewComplaintUser", Name = "ViewComplaintUser")]
+    [ProducesResponseType(typeof(ViewComplaintUserResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IResult> ViewComplaintUser(ViewComplaintUserRequest request, CancellationToken cancellationToken)
+    {
+        var user = new AuthedUser(User);
+
+        var response = await ComplaintsHostedService.ViewComplaint(new ViewComplaintRequest
+        {
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = user.BusinessReference,
+            GetPrivate = true
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+            return Results.NotFound(new ViewComplaintUserResponse
+            {
+                IsSucessful = false,
+                Errors = new List<string>() { "Complaint could not be found" }
+            });
+        return Results.Ok(new ViewComplaintUserResponse
+        {
+            IsSucessful = true,
+            IsOpen = response.IsOpen,
+            Notes = response.Notes.ConvertAll(x => new ComplaintNoteForUser
+            {
+                NoteText = x.NoteText,
+                SenderName = AccountsHostedService.GetNameByUserRef(new GetNameByUserReferenceRequest
+                {
+                    UserReference = x.UserReference
+                }, cancellationToken).Result.Name,
+                SenderReference = x.UserReference,
+                TimeNoteSent = x.TimePosted,
+                IsPublic = x.IsPublic
+            })
+        });
+    }
+
+    
+    // assign support engineer to task
+    // get assigned complaints
 }

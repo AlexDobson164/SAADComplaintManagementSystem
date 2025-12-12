@@ -1,6 +1,7 @@
 ﻿using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 public static class ComplaintsTable
 {
@@ -163,6 +164,17 @@ public static class ComplaintsTable
                 IsSuccessful = true,
                 ConsumerEmail = record.consumer_email
             };
+        }
+    }
+    public static async Task<bool> IsComplaintOpen(Guid complaintReference, Guid businessReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var response = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference == complaintReference)
+                .Where(x => x.business_reference == businessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+            return response.is_open;
         }
     }
 }
