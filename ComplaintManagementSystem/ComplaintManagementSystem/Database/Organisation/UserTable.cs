@@ -81,9 +81,25 @@ public static class UserTable
             return $"{record.first_name} {record.last_name}";
         }
     }
-}
-public class PasswordAndSaltDto
-{
-    public string Password { get; set; }
-    public string Salt { get; set; }
+
+    public static async Task<GetUserByRoleResponse> GetUsersByRole(GetUsersByRoleRequest request, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var results = await session.Query<UserRecord>()
+                .Where(x => x.business_reference == request.BusinessReference)
+                .Where(x => x.role == request.Role)
+                .ToListAsync(cancellationToken);
+            return new GetUserByRoleResponse
+            {
+                IsSuccessful = true,
+                Users = results.ConvertAll(x => new UserByRole
+                {
+                    UserReference = x.reference,
+                    Email = x.email,
+                    Name = $"{x.first_name} {x.last_name}"
+                })
+            };
+        }
+    }
 }

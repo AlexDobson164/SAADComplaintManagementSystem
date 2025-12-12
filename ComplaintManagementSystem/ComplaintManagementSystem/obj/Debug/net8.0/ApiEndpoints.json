@@ -44,6 +44,26 @@
     ]
   },
   {
+    "ContainingType": "AccountsController",
+    "Method": "GetAllSupportEngineers",
+    "RelativePath": "Accounts/GetAllSupportEngineers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "GetAllSupportEngineersResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "AuthController",
     "Method": "Token",
     "RelativePath": "Auth/AuthToken",

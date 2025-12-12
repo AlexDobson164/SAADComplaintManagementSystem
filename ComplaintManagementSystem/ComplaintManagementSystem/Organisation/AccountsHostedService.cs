@@ -77,4 +77,24 @@
             IsSuccessful = true
         };
     }
+    public async Task<GetAllUsersByRoleResponse> GetAllUsersByRole(GetAllUsersByRoleRequest request, CancellationToken cancellationToken)
+    {
+        var response = await UserTable.GetUsersByRole(new GetUsersByRoleRequest
+        {
+            Role = request.Role,
+            BusinessReference = request.BusinessReference
+        }, cancellationToken);
+
+        return new GetAllUsersByRoleResponse
+        {
+            IsSuccessful = true,
+            Users = response.Users.ConvertAll(x => new UserByRoleInfo
+            {
+                UserReference = x.UserReference,
+                Name = x.Name,
+                Email = x.Email
+            })
+        };
+    }
+
 }

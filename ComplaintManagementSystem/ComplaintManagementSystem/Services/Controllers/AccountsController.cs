@@ -38,4 +38,32 @@ public class AccountsController : ControllerBase
         }
         return Results.BadRequest(response);
     }
+
+    [HttpGet("GetAllSupportEngineers", Name = "GetAllSupportEngineers"), BasicAuth]
+    [ProducesResponseType(typeof(GetAllSupportEngineersResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IResult> GetAllSupportEngineers(CancellationToken cancellationToken)
+    {
+        var user = new AuthedUser(User);
+
+        if (user.Role == RolesEnum.Consumer)
+            return Results.Unauthorized();
+
+        var response = AccountsHostedService.GetAllUsersByRole(new GetAllUsersByRoleRequest
+        {
+            Role = RolesEnum.SupportEngineer,
+            BusinessReference = user.BusinessReference
+        },cancellationToken);
+
+        return Results.Ok(new GetAllSupportEngineersResponse
+        {
+            IsSuccessful = true,
+            SupportEngineers = response.Result.Users.ConvertAll(x => new SupportEngineer
+            {
+                UserReference = x.UserReference,
+                Name = x.Name,
+                Email = x.Email,
+            })
+        });
+    }
 }
