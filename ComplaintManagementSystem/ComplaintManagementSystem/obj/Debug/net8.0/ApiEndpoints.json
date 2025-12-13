@@ -295,6 +295,35 @@
   },
   {
     "ContainingType": "ComplaintsController",
+    "Method": "GetAllComplaintsForUser",
+    "RelativePath": "Complaints/GetAllComplaintsForUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "GetAllComplaintsForUser",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintsController",
     "Method": "RegisterComplaint",
     "RelativePath": "Complaints/RegisterComplaint",
     "HttpMethod": "POST",

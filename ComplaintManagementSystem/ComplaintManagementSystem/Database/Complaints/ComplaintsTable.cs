@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using ComplaintManagementSystem.Database.Complaints.Types;
+using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
 
@@ -174,6 +175,29 @@ public static class ComplaintsTable
                 .Where(x => x.business_reference == businessReference)
                 .FirstOrDefaultAsync(cancellationToken);
             return response.is_open;
+        }
+    }
+    public static async Task<ComplaintsDto> GetComplaintByReference(Guid complaintReference, Guid businessReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var response = await session.Query<ComplaintsRecord>()
+                .Where(x => x.reference == complaintReference)
+                .Where(x => x.business_reference == businessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+            return new ComplaintsDto
+            {
+                Reference = response.reference,
+                BusinessReference = response.business_reference,
+                ConsumerPostcode = response.consumer_post_code,
+                ConsumerEmail = response.consumer_email,
+                FirstMessage = response.first_message,
+                TimeOpened = response.time_opened,
+                IsOpen = response.is_open,
+                ClosedBy = response.closed_by,
+                ClosedReason = response.closed_reason,
+                LastUpdated = response.last_updated
+            };
         }
     }
 }

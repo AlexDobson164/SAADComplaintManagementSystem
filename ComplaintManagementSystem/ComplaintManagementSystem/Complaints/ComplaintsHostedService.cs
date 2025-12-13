@@ -307,4 +307,27 @@ public class ComplaintsHostedService
             IsSuccessful = true
         };
     }
+
+    public async Task<GetAllComplaintsForUserResponse> GetAllComplaintsForUser(GetAllComplaintsForUserRequest request, CancellationToken cancellationToken)
+    {
+        var complaintReferences = await ComplaintAssignmentTable.GetAllComplaintReferencesForUserRef(request.UserReference, cancellationToken);
+
+        List<ComplaintsInfo> complaints = new();
+        foreach (Guid reference in complaintReferences)
+        {
+            var record = await ComplaintsTable.GetComplaintByReference(reference, request.BusinessReference, cancellationToken);
+            complaints.Add(new ComplaintsInfo
+            {
+                Reference = record.Reference,
+                FirstMessage = record.FirstMessage,
+                CreatedAt = record.TimeOpened,
+                LastUpdated = record.LastUpdated
+            });
+        }
+
+        return new GetAllComplaintsForUserResponse { 
+            Complaints = complaints,
+            IsSucessful = true
+        };
+    }
 }

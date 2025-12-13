@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using FluentNHibernate.Utils;
+using NHibernate;
 using NHibernate.Linq;
 
 public static class ComplaintAssignmentTable
@@ -44,6 +45,16 @@ public static class ComplaintAssignmentTable
             session.BeginTransaction();
             session.DeleteAsync(record);
             await session.GetCurrentTransaction().CommitAsync(cancellationToken);
+        }
+    }
+    public static async Task<List<Guid>> GetAllComplaintReferencesForUserRef(Guid userReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            return await session.Query<ComplaintAssignmentRecord>()
+                .Where(x => x.user_reference == userReference)
+                .Select(x => x.complaint_reference)
+                .ToListAsync(cancellationToken);
         }
     }
 }

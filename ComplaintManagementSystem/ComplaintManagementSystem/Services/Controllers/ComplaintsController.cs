@@ -474,6 +474,30 @@ public class ComplaintsController : ControllerBase
             IsSuccessful = true
         });
     }
-    // unassign support engineer to task
     // get assigned complaints
+    [HttpGet("GetAllComplaintsForUser", Name = "GetAllComplaintsForUser"), BasicAuth]
+    [ProducesResponseType(typeof(GetAllComplaintsForUser), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IResult> GetAllComplaintsForUser(CancellationToken cancellationToken)
+    {
+        var user = new AuthedUser(User);
+
+        var response = await ComplaintsHostedService.GetAllComplaintsForUser(new GetAllComplaintsForUserRequest
+        {
+            UserReference = user.Reference,
+            BusinessReference = user.BusinessReference
+        }, cancellationToken);
+
+        return Results.Ok(new GetAllComplaintsForUser
+        {
+            Complaints = response.Complaints.ConvertAll(x => new ComplaintsInfo
+            {
+                Reference = x.Reference,
+                FirstMessage = x.FirstMessage,
+                CreatedAt = x.CreatedAt,
+                LastUpdated = x.LastUpdated
+            }),
+            IsSuccessful = true
+        });
+    }
 }
