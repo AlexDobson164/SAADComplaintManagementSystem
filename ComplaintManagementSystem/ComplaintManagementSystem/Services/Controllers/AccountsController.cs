@@ -49,7 +49,7 @@ public class AccountsController : ControllerBase
         if (user.Role == RolesEnum.Consumer)
             return Results.Unauthorized();
 
-        var response = AccountsHostedService.GetAllUsersByRole(new GetAllUsersByRoleRequest
+        var response = await AccountsHostedService.GetAllUsersByRole(new GetAllUsersByRoleRequest
         {
             Role = RolesEnum.SupportEngineer,
             BusinessReference = user.BusinessReference
@@ -58,7 +58,7 @@ public class AccountsController : ControllerBase
         return Results.Ok(new GetAllSupportEngineersResponse
         {
             IsSuccessful = true,
-            SupportEngineers = response.Result.Users.ConvertAll(x => new SupportEngineer
+            SupportEngineers = response.Users.ConvertAll(x => new SupportEngineer
             {
                 UserReference = x.UserReference,
                 Name = x.Name,

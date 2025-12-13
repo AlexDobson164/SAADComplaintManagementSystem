@@ -13,7 +13,7 @@ public class ComplaintAssingmentMapping : ClassMap<ComplaintAssignmentRecord>
         Table("complaints.complaint_assignment");
         Id(x => x.id)
             .Column("id")
-            .GeneratedBy.Identity();
+            .GeneratedBy.Sequence("complaints.complaint_assignment_id_seq");
         Map(x => x.complaint_reference);
         Map(x => x.user_reference);
     }

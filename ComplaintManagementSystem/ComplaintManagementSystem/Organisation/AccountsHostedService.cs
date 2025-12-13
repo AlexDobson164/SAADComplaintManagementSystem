@@ -97,4 +97,23 @@
         };
     }
 
+    public async Task<GetUserByReferenceResponse> GetUserByReference(GetUserByReferenceRequest request, CancellationToken cancellationToken)
+    {
+        var response = await UserTable.GetUserByReference(request.UserReference, request.BusinessReference, cancellationToken);
+
+        if (response == null)
+            return new GetUserByReferenceResponse
+            {
+                IsSuccessful = false,
+                Error = "Requested User does not exist"
+            };
+
+        return new GetUserByReferenceResponse
+        {
+            IsSuccessful = true,
+            User = response
+        };
+
+    }
+
 }

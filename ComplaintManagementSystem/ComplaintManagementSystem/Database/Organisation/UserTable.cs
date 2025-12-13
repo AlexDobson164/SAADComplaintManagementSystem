@@ -102,4 +102,29 @@ public static class UserTable
             };
         }
     }
+
+    public static async Task<User> GetUserByReference(Guid userReference, Guid BusinessReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<UserRecord>()
+                .Where(x => x.reference == userReference)
+                .Where(x => x.business_reference == BusinessReference)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            if (record == null)
+                return null;
+
+            return new User
+            {
+                Reference = record.reference,
+                Email = record.email,
+                BusinessReference = record.business_reference,
+                FirstName = record.first_name,
+                LastName = record.last_name,
+                Role = record.role,
+            };
+        }
+
+    }
 }

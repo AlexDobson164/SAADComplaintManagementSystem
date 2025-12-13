@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate.Linq.Expressions;
+using Org.BouncyCastle.Asn1.Mozilla;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.Xml;
 
 [ApiController]
 [Route("[controller]")]
@@ -321,9 +323,13 @@ public class ComplaintsController : ControllerBase
     [HttpPost("ViewComplaintUser", Name = "ViewComplaintUser")]
     [ProducesResponseType(typeof(ViewComplaintUserResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IResult> ViewComplaintUser(ViewComplaintUserRequest request, CancellationToken cancellationToken)
     {
         var user = new AuthedUser(User);
+
+        if (user.Role == RolesEnum.Consumer)
+            return Results.Unauthorized();
 
         var response = await ComplaintsHostedService.ViewComplaint(new ViewComplaintRequest
         {
@@ -356,9 +362,67 @@ public class ComplaintsController : ControllerBase
         });
     }
 
+    [HttpPost("AssignSupportEngineerToComplaint", Name = "AssignSupportEngineerToComplaint"), BasicAuth]
+    [ProducesResponseType(typeof(AssignSupportEngineerResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    
+    public async Task<IResult> AssignSupportEngineer(AssignSupportEngineerRequest request, CancellationToken cancellationToken)
+    {
+        var user = new AuthedUser(User);
+
+        if (user.Role == RolesEnum.Consumer)
+            return Results.Unauthorized();
+
+        var assignedUser = await AccountsHostedService.GetUserByReference(new GetUserByReferenceRequest
+        {
+            UserReference = request.UserReference,
+            BusinessReference = user.BusinessReference
+        }, cancellationToken);
+
+        if (!assignedUser.IsSuccessful)
+            return Results.NotFound(new AssignSupportEngineerResponse
+            {
+                IsSuccessful = false,
+                Errors = new List<string> { assignedUser.Error }
+            });
+
+        if (assignedUser.User.Role != RolesEnum.SupportEngineer)
+            return Results.BadRequest(new AssignSupportEngineerResponse
+            {
+                IsSuccessful = false,
+                Errors = new List<string> {"Requested User is not a Support Engineer"}
+            });
+
+        var response = await ComplaintsHostedService.AssignSupportEngineer(new AssignSupportEngineerToComplaintRequest
+        {
+            UserReference = request.UserReference,
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = user.BusinessReference
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+        {
+            if (response.ErrorCode == StatusCodes.Status404NotFound)
+                return Results.NotFound(new AssignSupportEngineerResponse
+                {
+                    IsSuccessful = false,
+                    Errors = new List<string> { response.Error }
+                });
+            return Results.BadRequest(new AssignSupportEngineerResponse
+            {
+                IsSuccessful = false,
+                Errors = new List<string> { response.Error }
+            });
+        }
+
+        return Results.Ok(new AssignSupportEngineerResponse
+        { 
+            IsSuccessful = true
+        });
+    }
 
     // assign support engineer to task
     // unassign support engineer to task
     // get assigned complaints
-    // get all complaints
 }

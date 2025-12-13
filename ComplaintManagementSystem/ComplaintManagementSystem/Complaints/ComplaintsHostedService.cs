@@ -257,4 +257,29 @@ public class ComplaintsHostedService
             IsSuccessful = true
         };
     }
+
+    public async Task<AssignSupportEngineerToComplaintResponse> AssignSupportEngineer(AssignSupportEngineerToComplaintRequest request, CancellationToken cancellationToken)
+    {
+        if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
+            return new AssignSupportEngineerToComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status404NotFound,
+                Error = "Complaint Not Found"
+            };
+
+        if (await ComplaintAssignmentTable.IsUserAssigned(request.UserReference, request.ComplaintReference, cancellationToken))
+            return new AssignSupportEngineerToComplaintResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status400BadRequest,
+                Error = "Engineer is already assigned to complaint"
+            };
+
+        await ComplaintAssignmentTable.AssignUser(request.UserReference, request.ComplaintReference, cancellationToken);
+        return new AssignSupportEngineerToComplaintResponse
+        {
+            IsSuccessful = true
+        };
+    }
 }
