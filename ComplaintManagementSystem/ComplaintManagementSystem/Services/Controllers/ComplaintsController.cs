@@ -422,7 +422,58 @@ public class ComplaintsController : ControllerBase
         });
     }
 
-    // assign support engineer to task
+    [HttpPost("UnassignSupportEngineerToComplaint", Name = "UnassignSupportEngineerToComplaint"), BasicAuth]
+    [ProducesResponseType(typeof(UnassignSupportEngineerResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
+    public async Task<IResult> UnassignSupportEngineer(UnassignSupportEngineerRequest request, CancellationToken cancellationToken)
+    {
+        var user = new AuthedUser(User);
+
+        if (user.Role == RolesEnum.Consumer)
+            return Results.Unauthorized();
+
+        var unassignedUser = await AccountsHostedService.GetUserByReference(new GetUserByReferenceRequest
+        {
+            UserReference = request.UserReference,
+            BusinessReference = user.BusinessReference
+        }, cancellationToken);
+
+        if (!unassignedUser.IsSuccessful)
+            return Results.NotFound(new AssignSupportEngineerResponse
+            {
+                IsSuccessful = false,
+                Errors = new List<string> { unassignedUser.Error }
+            });
+
+        var response = await ComplaintsHostedService.UnassignSupportEngineer(new UnassignSupportEngineerFromComplaintRequest
+        {
+            UserReference = request.UserReference,
+            ComplaintReference = request.ComplaintReference,
+            BusinessReference = user.BusinessReference
+        }, cancellationToken);
+
+        if (!response.IsSuccessful)
+        {
+            if (response.ErrorCode == StatusCodes.Status404NotFound)
+                return Results.NotFound(new AssignSupportEngineerResponse
+                {
+                    IsSuccessful = false,
+                    Errors = new List<string> { response.Error }
+                });
+            return Results.BadRequest(new AssignSupportEngineerResponse
+            {
+                IsSuccessful = false,
+                Errors = new List<string> { response.Error }
+            });
+        }
+
+        return Results.Ok(new AssignSupportEngineerResponse
+        {
+            IsSuccessful = true
+        });
+    }
     // unassign support engineer to task
     // get assigned complaints
 }

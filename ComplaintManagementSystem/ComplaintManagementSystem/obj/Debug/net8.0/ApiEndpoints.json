@@ -356,6 +356,50 @@
   },
   {
     "ContainingType": "ComplaintsController",
+    "Method": "UnassignSupportEngineer",
+    "RelativePath": "Complaints/UnassignSupportEngineerToComplaint",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "UnassignSupportEngineerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "UnassignSupportEngineerResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComplaintsController",
     "Method": "ViewComplaintConsumer",
     "RelativePath": "Complaints/ViewComplaintConsumer",
     "HttpMethod": "POST",

@@ -31,4 +31,19 @@ public static class ComplaintAssignmentTable
             await session.GetCurrentTransaction().CommitAsync(cancellationToken);
         }
     }
+
+    public static async Task UnassignUser(Guid userReference, Guid complaintReference, CancellationToken cancellationToken)
+    {
+        using (var session = DatabaseConnection.GetSession())
+        {
+            var record = await session.Query<ComplaintAssignmentRecord>()
+                .Where(x => x.user_reference == userReference)
+                .Where(x => x.complaint_reference == complaintReference)
+                .FirstOrDefaultAsync(cancellationToken);
+
+            session.BeginTransaction();
+            session.DeleteAsync(record);
+            await session.GetCurrentTransaction().CommitAsync(cancellationToken);
+        }
+    }
 }
