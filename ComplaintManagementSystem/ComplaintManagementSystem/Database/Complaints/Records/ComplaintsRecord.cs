@@ -1,4 +1,3 @@
-using FluentNHibernate.Conventions.Helpers;
 using FluentNHibernate.Mapping;
 
 public class ComplaintsRecord
@@ -22,7 +21,7 @@ public class ComplaintsMapping : ClassMap<ComplaintsRecord>
         Table("complaints.complaints");
         Id(x => x.id)
             .Column("id")
-            .GeneratedBy.Sequence("complaints.complaints_id_seq"); ;
+            .GeneratedBy.Sequence("complaints.complaints_id_seq");
         Map(x => x.reference);
         Map(x => x.consumer_email);
         Map(x => x.consumer_post_code);
