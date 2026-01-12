@@ -4,6 +4,9 @@
 }
 public class GetUserByEmailResponse
 {
+    public bool IsSuccessful {get; set;}
+    public int ErrorCode { get; set;}
+    public string ErrorMessage { get; set;}
     public Guid Reference { get; set; }
     public string Email { get; set; }
     public Guid BusinessReference { get; set; }

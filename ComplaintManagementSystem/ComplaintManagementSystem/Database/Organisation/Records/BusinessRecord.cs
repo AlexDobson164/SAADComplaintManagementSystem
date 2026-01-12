@@ -13,7 +13,9 @@ public class BusinessMapping : ClassMap<BusinessRecord>
     public BusinessMapping()
     {
         Table("organisation.business");
-        Id(x => x.id);
+        Id(x => x.id)
+            .Column("id")
+            .GeneratedBy.Sequence("business_id_seq");
         Map(x => x.reference);
         Map(x => x.name);
         Map(x => x.business_type)

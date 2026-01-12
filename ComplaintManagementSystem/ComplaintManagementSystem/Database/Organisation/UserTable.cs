@@ -26,7 +26,7 @@ public static class UserTable
             session.BeginTransaction();
             session.Save(new UserRecord
             {
-                reference = Guid.NewGuid(),
+                reference = user.Reference,
                 email = user.Email,
                 password = hashedPassword,
                 salt = salt,
@@ -78,6 +78,8 @@ public static class UserTable
             var record = await session.Query<UserRecord>()
                 .Where(x => x.reference == userReference)
                 .FirstOrDefaultAsync(cancellationToken);
+            if (record == null)
+                return "";
             return $"{record.first_name} {record.last_name}";
         }
     }
@@ -125,6 +127,5 @@ public static class UserTable
                 Role = record.role,
             };
         }
-
     }
 }

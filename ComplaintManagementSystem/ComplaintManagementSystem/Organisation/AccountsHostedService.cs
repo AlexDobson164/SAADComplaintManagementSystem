@@ -19,9 +19,10 @@
                 ErrorMessages = errorMessages.ToArray()
             };
 
+        Guid userReference = Guid.NewGuid();
         await UserTable.SaveNewUser(new User
         {
-            Reference = Guid.NewGuid(),
+            Reference = userReference,
             Email = request.Email,
             BusinessReference = request.BusinessReferece,
             FirstName = request.FirstName,
@@ -33,6 +34,7 @@
         return new CreateAccountResponse
         {
             IsSuccessful = true,
+            UserReference = userReference
         };
     }
 
@@ -52,8 +54,16 @@
     public async Task<GetUserByEmailResponse> GetUserByEmail(GetUserByEmailRequest request, CancellationToken cancellationToken)
     {
         var record = await UserTable.GetUserByEmail(request.Email, cancellationToken);
+        if (record == null)
+            return new GetUserByEmailResponse
+            {
+                IsSuccessful = false,
+                ErrorCode = StatusCodes.Status404NotFound,
+                ErrorMessage = "user not found"
+            };
         return new GetUserByEmailResponse
         {
+            IsSuccessful = true,
             Reference = record.Reference,
             Email = record.Email,
             BusinessReference = record.BusinessReference,

@@ -12,4 +12,5 @@ public class CreateAccountResponse
 {
     public bool IsSuccessful { get; set; }
     public string[]? ErrorMessages { get; set; }
+    public Guid UserReference { get; set; }
 }
