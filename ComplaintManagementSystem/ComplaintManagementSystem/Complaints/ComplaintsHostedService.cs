@@ -79,7 +79,7 @@ public class ComplaintsHostedService
         if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
             return new CreateNewNoteUserResponse
             {
-                IsSuccessful = false,
+                IsSuccess = false,
                 Errors = new List<string> { "requested complaint does not exist" }
             };
 
@@ -95,7 +95,7 @@ public class ComplaintsHostedService
 
         return new CreateNewNoteUserResponse
         {
-            IsSuccessful = true
+            IsSuccess = true
         };
     }
     
@@ -126,6 +126,12 @@ public class ComplaintsHostedService
                 ErrorCode = StatusCodes.Status404NotFound,
                 ErrorMessage = "Complaint does not exist"
             };
+
+        if (!String.IsNullOrEmpty(request.ConsumerPostcode))
+            request.ConsumerPostcode = request.ConsumerPostcode.Replace(" ", "").ToUpper();
+
+        if (!String.IsNullOrEmpty(request.ConsumerEmail))
+            request.ConsumerEmail = request.ConsumerEmail.ToLower();
 
         if (!await ComplaintsTable.CloseComplaint(new CloseComplaint
         {
@@ -162,7 +168,6 @@ public class ComplaintsHostedService
     }
     public async Task<UserCloseComplaintResponse> UserCloseComplaint(UserCloseComplaintRequest request, CancellationToken cancellationToken)
     {
-        //nneed to make a new save function that doesnt take consumer info
         if (!await ComplaintsTable.CheckIfComplaintExists(request.ComplaintReference, request.BusinessReference, cancellationToken))
             return new UserCloseComplaintResponse
             {
@@ -170,6 +175,12 @@ public class ComplaintsHostedService
                 ErrorCode = StatusCodes.Status404NotFound,
                 ErrorMessage = "Complaint does not exist"
             };
+
+        if (!String.IsNullOrEmpty(request.ConsumerPostcode))
+            request.ConsumerPostcode = request.ConsumerPostcode.Replace(" ", "").ToUpper();
+
+        if (!String.IsNullOrEmpty(request.ConsumerEmail))
+            request.ConsumerEmail = request.ConsumerEmail.ToLower();
 
         var lastUpdated = await ComplaintsTable.CheckWhenLastUpdated(request.ComplaintReference, request.BusinessReference, cancellationToken);
         var difference = DateTime.UtcNow - lastUpdated;

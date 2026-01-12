@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1G4MKn6IXKXLb3gAi/7uKkO6cXxX98+uc6Y4m9XBiPHXf1KPny/LOYJT26ROPT0B/H4hx4mTBT2H8lTEZYg2Cw==",
+  "dgSpecHash": "v+3eLTTN2ifdiXUYZjec3sqDSFALkBpnHsXzj/gYvK/iNI9ZjmDTIml/PLMscF4pKpZQTZn/YNjkRKwdlCc9hw==",
   "success": true,
   "projectFilePath": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alex\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\bouncycastle.cryptography\\2.6.1\\bouncycastle.cryptography.2.6.1.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\docker.dotnet.enhanced\\3.131.1\\docker.dotnet.enhanced.3.131.1.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\docker.dotnet.enhanced.x509\\3.131.1\\docker.dotnet.enhanced.x509.3.131.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\fluentnhibernate\\3.4.1\\fluentnhibernate.3.4.1.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\iesi.collections\\4.0.4\\iesi.collections.4.0.4.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\mailkit\\4.14.1\\mailkit.4.14.1.nupkg.sha512",
@@ -74,6 +76,8 @@
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\ssh.net\\2025.1.0\\ssh.net.2025.1.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
@@ -98,6 +102,7 @@
     "C:\\Users\\Alex\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.linq.queryable\\4.0.1\\system.linq.queryable.4.0.1.nupkg.sha512",
@@ -145,7 +150,9 @@
     "C:\\Users\\Alex\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Alex\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Alex\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Alex\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\testcontainers\\4.10.0\\testcontainers.4.10.0.nupkg.sha512",
+    "C:\\Users\\Alex\\.nuget\\packages\\testcontainers.postgresql\\4.10.0\\testcontainers.postgresql.4.10.0.nupkg.sha512"
   ],
   "logs": []
 }

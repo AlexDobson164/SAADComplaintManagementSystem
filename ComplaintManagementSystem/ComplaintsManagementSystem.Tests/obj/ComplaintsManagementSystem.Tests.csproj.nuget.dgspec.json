@@ -77,6 +77,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Testcontainers": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Testcontainers.PostgreSql": {
+              "target": "Package",
+              "version": "[4.10.0, )"
             }
           },
           "imports": [
@@ -167,6 +175,14 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.5.0, )"
+            },
+            "Testcontainers": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Testcontainers.PostgreSql": {
+              "target": "Package",
+              "version": "[4.10.0, )"
             },
             "coverlet.collector": {
               "target": "Package",

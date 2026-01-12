@@ -1,7 +1,8 @@
 ﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using System.Configuration;
+using NHibernate.Dialect;
+using Npgsql;
 
 public class DatabaseConnection
 {
@@ -32,6 +33,29 @@ public class DatabaseConnection
             }
             return _sessionFactory;
         }
+    }
+
+    public static void InitTestConnection(string connectionString)
+    {
+        if (_sessionFactory != null)
+            _sessionFactory.Dispose();
+
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            using var cmd = connection.CreateCommand();
+            cmd.CommandText = "CREATE SCHEMA IF NOT EXISTS organisation; CREATE SCHEMA IF NOT EXISTS complaints";
+            cmd.ExecuteNonQuery();
+        }
+
+        _sessionFactory = Fluently.Configure()
+            .Database(PostgreSQLConfiguration.Standard
+                .Dialect<PostgreSQL82Dialect>()
+                .ConnectionString(connectionString))
+            .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Program>())
+            .ExposeConfiguration(config =>
+                new NHibernate.Tool.hbm2ddl.SchemaExport(config).Create(false, true))
+            .BuildSessionFactory();
     }
 
     public static NHibernate.ISession GetSession()

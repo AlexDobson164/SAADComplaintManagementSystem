@@ -146,3 +146,9 @@ E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\Complaints
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\obj\Debug\net8.0\ComplaintsManagementSystem.Tests.pdb
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\obj\Debug\net8.0\ComplaintsManagementSystem.Tests.genruntimeconfig.cache
 E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\obj\Debug\net8.0\ref\ComplaintsManagementSystem.Tests.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\Docker.DotNet.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\Docker.DotNet.X509.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\ICSharpCode.SharpZipLib.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\Renci.SshNet.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\Testcontainers.dll
+E:\Users\Alex\SAADComplaintManagementSystem\ComplaintManagementSystem\ComplaintsManagementSystem.Tests\bin\Debug\net8.0\Testcontainers.PostgreSql.dll

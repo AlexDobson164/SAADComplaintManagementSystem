@@ -111,7 +111,7 @@ public class ComplaintsController : ControllerBase
             NoteText = request.NoteText
         }, cancellationToken).ConfigureAwait(false);
 
-        if (!response.IsSuccessful)
+        if (!response.IsSuccess)
             return Results.BadRequest(new AddNewNoteConsumerResponse
             {
                 IsSuccessful = false,
