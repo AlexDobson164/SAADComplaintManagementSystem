@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintsmanagementsystem.tests\\organisation\\business\\validateapikey\\givenarequesttovalidateanapikeythatdoesnotexist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|solutionrelative:complaintsmanagementsystem.tests\\organisation\\business\\validateapikey\\givenarequesttovalidateanapikeythatdoesnotexist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintsmanagementsystem.tests\\complaints\\addnote\\givenarequesttoaddanotetoacomplaintthatdoesntexist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|solutionrelative:complaintsmanagementsystem.tests\\complaints\\addnote\\givenarequesttoaddanotetoacomplaintthatdoesntexist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintsmanagementsystem.tests\\organisation\\business\\validateapikey\\givenarequesttovalidateanapikeythatiscorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|solutionrelative:complaintsmanagementsystem.tests\\organisation\\business\\validateapikey\\givenarequesttovalidateanapikeythatiscorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintsmanagementsystem.tests\\complaintsmanagementsystem.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|solutionrelative:complaintsmanagementsystem.tests\\complaintsmanagementsystem.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\organisation\\businesshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\organisation\\businesshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\services\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\services\\controllers\\complaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintsmanagementsystem.tests\\setup\\configuretestdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5411AA77-45B7-478E-AB78-243714096BD7}|ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj|solutionrelative:complaintsmanagementsystem.tests\\setup\\configuretestdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|e:\\users\\alex\\saadcomplaintmanagementsystem\\complaintmanagementsystem\\complaintmanagementsystem\\complaints\\complaintshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{399C953C-1002-45FC-95EA-4A7BFDEE0A97}|ComplaintManagementSystem\\ComplaintManagementSystem.csproj|solutionrelative:complaintmanagementsystem\\complaints\\complaintshostedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,72 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BusinessHostedService.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "RelativeToolTip": "ComplaintManagementSystem\\Organisation\\BusinessHostedService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAABKAAAA",
+              "DocumentIndex": 0,
+              "Title": "GivenARequestToAddANoteToAComplaintThatDoesntExist.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Complaints\\AddNote\\GivenARequestToAddANoteToAComplaintThatDoesntExist.cs",
+              "RelativeDocumentMoniker": "ComplaintsManagementSystem.Tests\\Complaints\\AddNote\\GivenARequestToAddANoteToAComplaintThatDoesntExist.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Complaints\\AddNote\\GivenARequestToAddANoteToAComplaintThatDoesntExist.cs*",
+              "RelativeToolTip": "ComplaintsManagementSystem.Tests\\Complaints\\AddNote\\GivenARequestToAddANoteToAComplaintThatDoesntExist.cs*",
+              "ViewState": "AQIAAAMAAAAAAAAAAADgvygAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T15:15:29.012Z",
-              "IsPinned": true,
+              "WhenOpened": "2026-01-13T14:22:33.453Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GivenARequestToValidateAnApiKeyThatDoesNotExist.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatDoesNotExist.cs",
-              "RelativeDocumentMoniker": "ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatDoesNotExist.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatDoesNotExist.cs",
-              "RelativeToolTip": "ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatDoesNotExist.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "DocumentIndex": 3,
+              "Title": "ComplaintsHostedService.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Complaints\\ComplaintsHostedService.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Complaints\\ComplaintsHostedService.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Complaints\\ComplaintsHostedService.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Complaints\\ComplaintsHostedService.cs",
+              "ViewState": "AQIAAPoAAAAAAAAAAAAawA0BAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T15:30:26.814Z",
+              "WhenOpened": "2026-01-13T13:21:32.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ComplaintsManagementSystem.Tests",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj",
-              "RelativeDocumentMoniker": "ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj*",
-              "RelativeToolTip": "ComplaintsManagementSystem.Tests\\ComplaintsManagementSystem.Tests.csproj*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-12T15:28:58.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ConfigureTestDb.cs",
               "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Setup\\ConfigureTestDb.cs",
               "RelativeDocumentMoniker": "ComplaintsManagementSystem.Tests\\Setup\\ConfigureTestDb.cs",
               "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Setup\\ConfigureTestDb.cs",
               "RelativeToolTip": "ComplaintsManagementSystem.Tests\\Setup\\ConfigureTestDb.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowBwAAAA+AAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T15:24:17.633Z",
+              "WhenOpened": "2026-01-13T11:17:30.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GivenARequestToValidateAnApiKeyThatIsCorrect.cs",
-              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatIsCorrect.cs",
-              "RelativeDocumentMoniker": "ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatIsCorrect.cs",
-              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatIsCorrect.cs",
-              "RelativeToolTip": "ComplaintsManagementSystem.Tests\\Organisation\\Business\\ValidateApiKey\\GivenARequestToValidateAnApiKeyThatIsCorrect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAApAAAA",
+              "Title": "ComplaintsController.cs",
+              "DocumentMoniker": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "RelativeDocumentMoniker": "ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "ToolTip": "E:\\Users\\Alex\\SAADComplaintManagementSystem\\ComplaintManagementSystem\\ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "RelativeToolTip": "ComplaintManagementSystem\\Services\\Controllers\\ComplaintsController.cs",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAawN4AAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T15:18:19.148Z",
+              "WhenOpened": "2026-01-13T09:35:44.336Z",
               "EditorCaption": ""
             }
           ]

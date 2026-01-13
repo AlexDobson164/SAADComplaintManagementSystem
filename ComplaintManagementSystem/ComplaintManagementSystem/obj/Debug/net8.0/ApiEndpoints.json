@@ -507,22 +507,37 @@
     ]
   },
   {
-    "ContainingType": "ComplaintManagementSystem.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast/weather",
-    "HttpMethod": "GET",
+    "ContainingType": "ComplaintManagementSystem.Services.ConfigureTestDatabaseConstroler",
+    "Method": "ConfigureTestDatabase",
+    "RelativePath": "ConfigureTestDatabaseConstroler/ConfigureTestDatabase",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ComplaintManagementSystem.WeatherForecast, ComplaintManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
         "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
       }
     ]
   }

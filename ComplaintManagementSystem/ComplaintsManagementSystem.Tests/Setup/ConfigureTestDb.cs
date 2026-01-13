@@ -9,6 +9,7 @@ using Testcontainers.PostgreSql;
 public class ConfigureTestDb
 {
     public static PostgreSqlContainer Postgres { get; private set; }
+    AccountsHostedService accountsHostedService = new AccountsHostedService();
 
     [OneTimeSetUp]
     public async Task GlobalSetup()

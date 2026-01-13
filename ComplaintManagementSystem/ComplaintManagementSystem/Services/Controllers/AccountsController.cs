@@ -10,6 +10,7 @@ public class AccountsController : ControllerBase
     [HttpPost("AdminCreateAccount", Name = "AdminCreateAccount"), BasicAuth]
     [ProducesResponseType(typeof(CreateAccountResponse),StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public async Task<IResult> CreateAccount(AdminCreateAccountRequest request, CancellationToken cancellationToken)
     {

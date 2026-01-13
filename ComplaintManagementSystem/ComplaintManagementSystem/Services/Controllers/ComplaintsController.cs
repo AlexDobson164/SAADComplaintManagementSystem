@@ -108,7 +108,8 @@ public class ComplaintsController : ControllerBase
             ComplaintReference = request.ComplaintReference,
             BusinessReference = user.BusinessReference,
             UserReference = user.Reference,
-            NoteText = request.NoteText
+            NoteText = request.NoteText,
+            IsPublic = request.IsPublic
         }, cancellationToken).ConfigureAwait(false);
 
         if (!response.IsSuccess)
