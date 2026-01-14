@@ -1,0 +1,1380 @@
+{
+	"info": {
+		"_postman_id": "6f64bb51-fb11-41ce-856e-f7086e5ac236",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51453808",
+		"_collection_link": "https://alexdobson04-1886015.postman.co/workspace/Alex-Dobson's-Workspace~2e43ea2d-4746-465e-8db2-21bc289eb2cc/collection/51453808-6f64bb51-fb11-41ce-856e-f7086e5ac236?action=share&source=collection_link&creator=51453808"
+	},
+	"item": [
+		{
+			"name": "ConfigureTestDatabase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Database Successfully configured\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "x-api-key",
+						"value": "f67c5dc3-4a4b-4a94-a63f-9cd5b1ce096f",
+						"description": "api key of test business before configuration",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7021/ConfigureTestDatabaseConstroler/ConfigureTestDatabase?password=%ym4dqvU@69R%Putq5mtY2ppFckQJ@#3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"ConfigureTestDatabaseConstroler",
+						"ConfigureTestDatabase"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "%ym4dqvU@69R%Putq5mtY2ppFckQJ@"
+						}
+					],
+					"hash": "3"
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "SystemAdminAccountCreated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Can Successfully authorize as system admin\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY="
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7021/Auth/AuthToken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Auth",
+						"AuthToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterNewComplaint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Can Successfully create a new complaint\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200)\r",
+							"})\r",
+							"pm.collectionVariables.set(\"complaintReference\", pm.response.json().complaintReference)"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"consumerEmail\": \"consumerTest@email.com\",\n  \"consumerPostCode\": \"ST16 2NS\",\n  \"noteText\": \"this is a note for API tests\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/RegisterComplaint",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"RegisterComplaint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComplaintSearchWithReference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The reference is correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].reference).to.eql(pm.collectionVariables.get(\"complaintReference\"))\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The first message are correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].firstMessage).to.eql(\"this is a note for API tests\")\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The complaint is open\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].isOpen).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\",\n  \"is_Open\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/SearchForComplaint",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"SearchForComplaint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComplaintSearchWithConsumerEmail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The reference is correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].reference).to.eql(pm.collectionVariables.get(\"complaintReference\"))\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The first message are correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].firstMessage).to.eql(\"this is a note for API tests\")\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The complaint is open\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].isOpen).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"consumerEmail\": \"consumerTest@email.com\",\n  \"is_Open\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/SearchForComplaint",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"SearchForComplaint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComplaintSearchWithConsumerPostcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The reference is correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].reference).to.eql(pm.collectionVariables.get(\"complaintReference\"))\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The first message are correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].firstMessage).to.eql(\"this is a note for API tests\")\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The complaint is open\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].isOpen).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"consumerPostCode\": \"ST16 2NS\",\n  \"is_Open\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/SearchForComplaint",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"SearchForComplaint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComplaintSearchWithFirstNote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"The reference is correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].reference).to.eql(pm.collectionVariables.get(\"complaintReference\"))\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The first message are correct\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].firstMessage).to.eql(\"this is a note for API tests\")\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The complaint is open\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].isOpen).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstNote\": \"this is a note for API tests\",\n  \"is_Open\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/SearchForComplaint",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"SearchForComplaint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AConsumerCanAddNoteToComplaint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/AddNoteConsumer\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            complaintReference: pm.collectionVariables.get(\"complaintReference\"),\r",
+							"            noteText: \"note by consumer\"\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddNoteConsumer request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"AddNoteConsumer response status:\", res.code);\r",
+							"    console.log(\"AddNoteConsumer Request:\", request)\r",
+							"    console.log(\"AddNoteConsumer response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"There are the correct number of notes\", function (){\r",
+							"    pm.expect(pm.response.json().notes.length).to.eql(2)\r",
+							"})\r",
+							"pm.test(\"new note has correct text\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json().notes[0].noteText).to.eql(\"note by consumer\")\r",
+							"})\r",
+							"pm.test(\"there is no sendername\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].senderName).to.eql(null)\r",
+							"})\r",
+							"pm.test(\"the note is public\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].isPublic).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUserCanAddAPublicNoteToComplaint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/AddNoteUser\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            complaintReference: pm.collectionVariables.get(\"complaintReference\"),\r",
+							"            noteText: \"public note by user\",\r",
+							"            isPublic: true\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"AddPublicNoteUser response status:\", res.code);\r",
+							"    console.log(\"AddPublicNoteUser Request:\", request)\r",
+							"    console.log(\"AddPublicNoteUser response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"There are the correct number of notes\", function (){\r",
+							"    pm.expect(pm.response.json().notes.length).to.eql(3)\r",
+							"})\r",
+							"pm.test(\"new note has correct text\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json().notes[0].noteText).to.eql(\"public note by user\")\r",
+							"})\r",
+							"pm.test(\"the sendername is correct\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].senderName).to.eql(\"Test SystemAdmin\")\r",
+							"})\r",
+							"pm.test(\"the note is public\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].isPublic).to.eql(true)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUserCanAddAPrivateNoteToComplaint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"There are the correct number of notes\", function (){\r",
+							"    pm.expect(pm.response.json().notes.length).to.eql(4)\r",
+							"})\r",
+							"pm.test(\"new note has correct text\", function ()\r",
+							"{\r",
+							"    pm.expect(pm.response.json().notes[0].noteText).to.eql(\"private note by user\")\r",
+							"})\r",
+							"pm.test(\"the sendername is correct\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].senderName).to.eql(\"Test SystemAdmin\")\r",
+							"})\r",
+							"pm.test(\"the note is private\", function (){\r",
+							"    pm.expect(pm.response.json().notes[0].isPublic).to.eql(false)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/AddNoteUser\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            complaintReference: pm.collectionVariables.get(\"complaintReference\"),\r",
+							"            noteText: \"private note by user\",\r",
+							"            isPublic: false\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"AddPublicNoteUser response status:\", res.code);\r",
+							"    console.log(\"AddPublicNoteUser Request:\", request)\r",
+							"    console.log(\"AddPublicNoteUser response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY="
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AConsumerCanOnlyViewPublicNotes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Then the consumer can see the correct amount of notes\", function (){\r",
+							"    pm.expect(pm.response.json().notes.length).to.eql(3)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"packages": {},
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintConsumer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintConsumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AConsumerCanCloseComplaint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/CloseComplaintConsumer\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            complaintReference: pm.collectionVariables.get(\"complaintReference\"),\r",
+							"            consumerEmail: \"consumerTest@email.com\",\r",
+							"            consumerPostcode: \"ST16 2NS\",\r",
+							"            feedback: \"consumer feedback\"\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"ConsumerCloseComplaint response status:\", res.code);\r",
+							"    console.log(\"ConsumerCloseComplaint Request:\", request)\r",
+							"    console.log(\"ConsumerCloseComplaint response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Complaint is closed\", function(){\r",
+							"    pm.expect(pm.response.json().isOpen).to.eql(false);\r",
+							"})\r",
+							"pm.test(\"feedback message is correct\", function(){\r",
+							"    pm.expect(pm.response.json().notes[0].noteText).to.eql(\"consumer feedback\")\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSuppportEngineers",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var createSupportEngineerRequest = {\r",
+							"    url: \"https://localhost:7021/Accounts/AdminCreateAccount\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            emailAddress: \"suppportengineer@test.com\",\r",
+							"            password: \"supportengineerpassword\",\r",
+							"            businessReference: \"C83BAB21-F173-475B-A9DA-F82C91588CB9\",\r",
+							"            firstName: \"Support\",\r",
+							"            lastName: \"Engineer\",\r",
+							"            role: 3\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(createSupportEngineerRequest, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"CreateSupportEngineer response status:\", res.code);\r",
+							"    console.log(\"CreateSupportEngineer Request:\", createSupportEngineerRequest)\r",
+							"    console.log(\"CreateSupportEngineer response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"support engineer has correct name\", function(){\r",
+							"    pm.expect(pm.response.json().supportEngineers[0].name).to.eql(\"Support Engineer\")\r",
+							"})\r",
+							"pm.test(\"support engineer has correct email\", function(){\r",
+							"    pm.expect(pm.response.json().supportEngineers[0].email).to.eql(\"suppportengineer@test.com\")\r",
+							"})\r",
+							"\r",
+							"pm.collectionVariables.set(\"supportEngineerReference\", pm.response.json().supportEngineers[0].userReference)"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY="
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7021/Accounts/GetAllSupportEngineers",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Accounts",
+						"GetAllSupportEngineers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CanAssignSupportEngineerToComplaint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var createComplaintRequest = {\r",
+							"    url: \"https://localhost:7021/Complaints/RegisterComplaint\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            consumerEmail: \"assignTest@email.com\",\r",
+							"            consumerPostCode: \"S1 4RA\",\r",
+							"            noteText: \"assign support to complaint\"\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"var response = pm.sendRequest(createComplaintRequest, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"CreateAssignComplaint response status:\", res.code);\r",
+							"    console.log(\"CreateAssignComplaint Request:\", createComplaintRequest)\r",
+							"    console.log(\"CreateAssignComplaint response body:\", res.body);\r",
+							"    pm.collectionVariables.set(\"AssignSupportEngineerComplaintReference\", res.json().complaintReference)\r",
+							"\r",
+							"    var assignSupportRequest = {\r",
+							"        url: \"https://localhost:7021/Complaints/AssignSupportEngineerToComplaint\",\r",
+							"        method: \"POST\",\r",
+							"        header: {\r",
+							"            \"accept\" : \"text/plain\",\r",
+							"            \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"            \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"            \"Content-Type\": \"application/json\"\r",
+							"            },\r",
+							"        body: {\r",
+							"            mode: \"raw\",\r",
+							"            raw: JSON.stringify({\r",
+							"                userReference: pm.collectionVariables.get(\"supportEngineerReference\"),\r",
+							"                complaintReference: pm.collectionVariables.get(\"AssignSupportEngineerComplaintReference\")\r",
+							"            })\r",
+							"        }\r",
+							"    }\r",
+							"        pm.sendRequest(assignSupportRequest, function (err, res) {\r",
+							"        if (err) {\r",
+							"            console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"            return;\r",
+							"        }\r",
+							"            console.log(\"AssignSupportEngineer response status:\", res.code);\r",
+							"            console.log(\"AssignSupportEngineer Request:\", assignSupportRequest)\r",
+							"            console.log(\"AssignSupportEngineer response body:\", );\r",
+							"        })\r",
+							"    })\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The correct complaint reference is returned\", function () {\r",
+							"    pm.expect(pm.response.json().complaints[0].reference).to.eql(pm.collectionVariables.get(\"AssignSupportEngineerComplaintReference\"))\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3VwcHBvcnRlbmdpbmVlckB0ZXN0LmNvbTpzdXBwb3J0ZW5naW5lZXJwYXNzd29yZA=="
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7021/Complaints/GetAllComplaintsForUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"GetAllComplaintsForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CanUnassignSupportEngineerFromComplaint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the support engineer is not assinged to any complaints\", function (){\r",
+							"    pm.expect(pm.response.json().complaints.length).to.equal(0)\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/UnassignSupportEngineerToComplaint\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            userReference: pm.collectionVariables.get(\"supportEngineerReference\"),\r",
+							"            complaintReference: pm.collectionVariables.get(\"AssignSupportEngineerComplaintReference\")\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"UnassignSupport status:\", res.code);\r",
+							"    console.log(\"UnassignSupport Request:\", request)\r",
+							"    console.log(\"UnassignSupport response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3VwcHBvcnRlbmdpbmVlckB0ZXN0LmNvbTpzdXBwb3J0ZW5naW5lZXJwYXNzd29yZA==",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7021/Complaints/GetAllComplaintsForUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"GetAllComplaintsForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUserCanCloseComplaint Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var request = {\r",
+							"    url: \"https://localhost:7021/Complaints/CloseComplaintUser\",\r",
+							"    method: \"POST\",\r",
+							"    header: {\r",
+							"        \"accept\" : \"text/plain\",\r",
+							"        \"Authorization\" : \"Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=\",\r",
+							"        \"x-api-key\" : \"618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8\",\r",
+							"        \"Content-Type\": \"application/json\"\r",
+							"        },\r",
+							"    body: {\r",
+							"        mode: \"raw\",\r",
+							"        raw: JSON.stringify({\r",
+							"            complaintReference: pm.collectionVariables.get(\"complaintReference\"),\r",
+							"            consumerEmail: \"consumerTest@email.com\",\r",
+							"            consumerPostcode: \"ST16 2NS\",\r",
+							"            reason: \"test reason\",\r",
+							"            feedback: \"consumer feedback\"\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"pm.sendRequest(request, function (err, res) {\r",
+							"    if (err) {\r",
+							"        console.error(\"AddPublicNoteUser request failed:\", err);\r",
+							"        return;\r",
+							"    }\r",
+							"    console.log(\"ConsumerCloseComplaint response status:\", res.code);\r",
+							"    console.log(\"ConsumerCloseComplaint Request:\", request)\r",
+							"    console.log(\"ConsumerCloseComplaint response body:\", res);\r",
+							"\r",
+							"    })"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Complaint is closed\", function(){\r",
+							"    pm.expect(pm.response.json().isOpen).to.eql(false);\r",
+							"})\r",
+							"pm.test(\"feedback message is correct\", function(){\r",
+							"    pm.expect(pm.response.json().notes[0].noteText).to.eql(\"consumer feedback\")\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-key",
+						"value": "618FF1F2-0C8B-4EA5-ABA5-3E1C63134EE8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic c3lzdGVtYWRtaW5AdGVzdC5jb206M3FGKkg2Wlh5ZnhoNSVXTVNCZ0BUWERZQFJjQVgzVkY=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"complaintReference\": \"{{complaintReference}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7021/Complaints/ViewComplaintUser",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7021",
+					"path": [
+						"Complaints",
+						"ViewComplaintUser"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "complaintReference",
+			"value": ""
+		},
+		{
+			"key": "supportEngineerReference",
+			"value": ""
+		},
+		{
+			"key": "AssignSupportEngineerComplaintReference",
+			"value": ""
+		}
+	]
+}
